@@ -1,5 +1,5 @@
 //
-//  CategoryListModels.swift
+//  DataModels.swift
 //  FlashCards
 //
 //  Created by user on 19/12/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CategoryListModels {
+struct DataModels {
     
     struct Category {
         let id: String
@@ -17,6 +17,18 @@ struct CategoryListModels {
         init(id: String, title: String) {
             self.id = id
             self.title = title
+        }
+    }
+    
+    struct FlashCard {
+        let id: String
+        let question: String
+        let answer: String
+        
+        init(id: String, question: String, answer: String) {
+            self.id = id
+            self.question = question
+            self.answer = answer
         }
     }
 }

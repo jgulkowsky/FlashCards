@@ -17,7 +17,7 @@
 		CEF7737B21C95AF7005D81A4 /* FlashCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7737A21C95AF6005D81A4 /* FlashCardsViewController.swift */; };
 		CEF7737D21C9606B005D81A4 /* CategoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7737C21C9606B005D81A4 /* CategoryListRouter.swift */; };
 		CEF7737F21C960D3005D81A4 /* CategoryListGetWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7737E21C960D3005D81A4 /* CategoryListGetWorker.swift */; };
-		CEF773AD21CAA088005D81A4 /* CategoryListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773AC21CAA087005D81A4 /* CategoryListModels.swift */; };
+		CEF773AD21CAA088005D81A4 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773AC21CAA087005D81A4 /* DataModels.swift */; };
 		CEF773B221CAAD64005D81A4 /* Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773B121CAAD64005D81A4 /* Names.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		CEF7737A21C95AF6005D81A4 /* FlashCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsViewController.swift; sourceTree = "<group>"; };
 		CEF7737C21C9606B005D81A4 /* CategoryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListRouter.swift; sourceTree = "<group>"; };
 		CEF7737E21C960D3005D81A4 /* CategoryListGetWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListGetWorker.swift; sourceTree = "<group>"; };
-		CEF773AC21CAA087005D81A4 /* CategoryListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListModels.swift; sourceTree = "<group>"; };
+		CEF773AC21CAA087005D81A4 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		CEF773B121CAAD64005D81A4 /* Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Names.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,11 +68,12 @@
 		CEF7736221C9584F005D81A4 /* FlashCards */ = {
 			isa = PBXGroup;
 			children = (
-				CEF773B021CAACEE005D81A4 /* SetFlashCard */,
-				CEF773AF21CAACE7005D81A4 /* SetCategory */,
-				CEF773AE21CAACD9005D81A4 /* FlashCards */,
 				CEF7737521C9585B005D81A4 /* CategoryList */,
+				CEF773AE21CAACD9005D81A4 /* FlashCards */,
+				CEF773AF21CAACE7005D81A4 /* SetCategory */,
+				CEF773B021CAACEE005D81A4 /* SetFlashCard */,
 				CEF7736321C9584F005D81A4 /* AppDelegate.swift */,
+				CEF773AC21CAA087005D81A4 /* DataModels.swift */,
 				CEF773B121CAAD64005D81A4 /* Names.swift */,
 				CEF7736721C9584F005D81A4 /* Main.storyboard */,
 				CEF7736A21C95850005D81A4 /* Assets.xcassets */,
@@ -88,7 +89,6 @@
 				CEF7736521C9584F005D81A4 /* CategoryListViewController.swift */,
 				CEF7737C21C9606B005D81A4 /* CategoryListRouter.swift */,
 				CEF7737E21C960D3005D81A4 /* CategoryListGetWorker.swift */,
-				CEF773AC21CAA087005D81A4 /* CategoryListModels.swift */,
 			);
 			path = CategoryList;
 			sourceTree = "<group>";
@@ -189,7 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF7737721C95AD3005D81A4 /* SetFlashCardViewController.swift in Sources */,
-				CEF773AD21CAA088005D81A4 /* CategoryListModels.swift in Sources */,
+				CEF773AD21CAA088005D81A4 /* DataModels.swift in Sources */,
 				CEF7736621C9584F005D81A4 /* CategoryListViewController.swift in Sources */,
 				CEF773B221CAAD64005D81A4 /* Names.swift in Sources */,
 				CEF7737D21C9606B005D81A4 /* CategoryListRouter.swift in Sources */,

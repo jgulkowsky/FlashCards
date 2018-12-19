@@ -33,6 +33,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Categories" id="PkM-YJ-CYR">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="BhA-0g-dhQ"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IEF-fT-xqI">
                             <connections>
                                 <action selector="onAddButtonPressed:" destination="3b0-Hl-f72" id="8up-9W-ut6"/>
@@ -99,6 +100,9 @@
                                 <rect key="frame" x="164" y="204" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onButtonPressed:" destination="rL5-5v-yAJ" eventType="touchUpInside" id="LF8-Zb-IHL"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXP-Z6-HQC">
                                 <rect key="frame" x="168" y="162" width="42" height="21"/>
@@ -111,6 +115,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="spQ-Cy-XIm"/>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="gzL-Wa-OJN" id="xmb-i3-eKR"/>
+                        <outlet property="warning" destination="MXP-Z6-HQC" id="xeq-N7-tZr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0s-M4-ZJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

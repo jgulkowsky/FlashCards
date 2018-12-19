@@ -9,12 +9,12 @@
 import UIKit
 
 protocol CategoryListGetWorkerDelegate {
-    func getCategoryList(_ categoriesTitles: [CategoryListModels.Category])
+    func getCategoryList(_ categoryList: [DataModels.Category])
 }
 
 class CategoryListViewController: UITableViewController {
     
-    private var categoryList: [CategoryListModels.Category] = []
+    private var categoryList: [DataModels.Category] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class CategoryListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        routeToFlashCards()
+        routeToFlashCards(withCategory: categoryList[indexPath.row])
     }
 }
 
@@ -45,15 +45,15 @@ extension CategoryListViewController {
         worker.getCategoryList()
     }
     
-    private func routeToSetCategoryTitle() {
+    private func routeToSetCategoryTitle(withCategory category: DataModels.Category? = nil) {
         //TODO: We need to send category title and id if it's set not add
-        let router = CategoryListRouter(controller: self)
+        let router = CategoryListRouter(controller: self, category: category)
         router.routeToSetCategory()
     }
     
-    private func routeToFlashCards() {
+    private func routeToFlashCards(withCategory category: DataModels.Category) {
         //TODO: We need to send category title and id
-        let router = CategoryListRouter(controller: self)
+        let router = CategoryListRouter(controller: self, category: category)
         router.routeToFlashCards()
     }
     
@@ -65,7 +65,7 @@ extension CategoryListViewController {
 }
 
 extension CategoryListViewController: CategoryListGetWorkerDelegate {
-    func getCategoryList(_ categoryList: [CategoryListModels.Category]) {
+    func getCategoryList(_ categoryList: [DataModels.Category]) {
         self.categoryList = categoryList
         tableView.reloadData()
     }

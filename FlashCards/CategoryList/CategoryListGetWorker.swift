@@ -20,11 +20,11 @@ class CategoryListGetWorker {
         //TODO: Get data from db
         
         //for now data is mocked
-        var categoryList = [CategoryListModels.Category]()
-        categoryList.append(CategoryListModels.Category(id: "0", title: "Math"))
-        categoryList.append(CategoryListModels.Category(id: "1", title: "English"))
-        categoryList.append(CategoryListModels.Category(id: "2", title: "Biology"))
-        categoryList.append(CategoryListModels.Category(id: "3", title: "Chemistry"))
+        var categoryList = [DataModels.Category]()
+        categoryList.append(DataModels.Category(id: "0", title: "Math"))
+        categoryList.append(DataModels.Category(id: "1", title: "English"))
+        categoryList.append(DataModels.Category(id: "2", title: "Biology"))
+        categoryList.append(DataModels.Category(id: "3", title: "Chemistry"))
         
         delegate.getCategoryList(categoryList)
     }
