@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SetCategoryViewController.swift
 //  FlashCards
 //
 //  Created by user on 18/12/2018.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SetCategoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-
 }
-
