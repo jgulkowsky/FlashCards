@@ -23,6 +23,9 @@
 		CEF773B921CAF3A6005D81A4 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773B821CAF3A6005D81A4 /* FlashCard.swift */; };
 		CEF773BB21CB0FF4005D81A4 /* SetCategoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773BA21CB0FF4005D81A4 /* SetCategoryWorker.swift */; };
 		CEF773BD21CB1D66005D81A4 /* SetCategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773BC21CB1D66005D81A4 /* SetCategoryRouter.swift */; };
+		CEF773C321CBD034005D81A4 /* FlashCardsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C221CBD034005D81A4 /* FlashCardsRouter.swift */; };
+		CEF773C521CBDD15005D81A4 /* SetFlashCardWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C421CBDD15005D81A4 /* SetFlashCardWorker.swift */; };
+		CEF773C721CBE022005D81A4 /* SetFlashCardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C621CBE022005D81A4 /* SetFlashCardRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		CEF773B821CAF3A6005D81A4 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		CEF773BA21CB0FF4005D81A4 /* SetCategoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryWorker.swift; sourceTree = "<group>"; };
 		CEF773BC21CB1D66005D81A4 /* SetCategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryRouter.swift; sourceTree = "<group>"; };
+		CEF773C221CBD034005D81A4 /* FlashCardsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsRouter.swift; sourceTree = "<group>"; };
+		CEF773C421CBDD15005D81A4 /* SetFlashCardWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardWorker.swift; sourceTree = "<group>"; };
+		CEF773C621CBE022005D81A4 /* SetFlashCardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardRouter.swift; sourceTree = "<group>"; };
 		FA210BD8BDF2F2BBE1454004 /* Pods-FlashCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCards.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF7737A21C95AF6005D81A4 /* FlashCardsViewController.swift */,
+				CEF773C221CBD034005D81A4 /* FlashCardsRouter.swift */,
 			);
 			path = "Flash Cards";
 			sourceTree = "<group>";
@@ -145,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				CEF7737621C95AD3005D81A4 /* SetFlashCardViewController.swift */,
+				CEF773C421CBDD15005D81A4 /* SetFlashCardWorker.swift */,
+				CEF773C621CBE022005D81A4 /* SetFlashCardRouter.swift */,
 			);
 			path = "Set Flash Card";
 			sourceTree = "<group>";
@@ -281,6 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF7737721C95AD3005D81A4 /* SetFlashCardViewController.swift in Sources */,
+				CEF773C521CBDD15005D81A4 /* SetFlashCardWorker.swift in Sources */,
+				CEF773C721CBE022005D81A4 /* SetFlashCardRouter.swift in Sources */,
+				CEF773C321CBD034005D81A4 /* FlashCardsRouter.swift in Sources */,
 				CEF7736621C9584F005D81A4 /* CategoryListViewController.swift in Sources */,
 				CEF773B221CAAD64005D81A4 /* Names.swift in Sources */,
 				CEF7737D21C9606B005D81A4 /* CategoryListRouter.swift in Sources */,

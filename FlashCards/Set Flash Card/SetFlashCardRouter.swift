@@ -1,5 +1,5 @@
 //
-//  SetCategoryRouter.swift
+//  SetFlashCardRouter.swift
 //  FlashCards
 //
 //  Created by user on 20/12/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SetCategoryRouter {
+class SetFlashCardRouter {
     
     private weak var controller: UIViewController!
     
@@ -16,7 +16,8 @@ class SetCategoryRouter {
         self.controller = controller
     }
     
-    func routeToCategoryList() {
+    func routeToFlashCards() {
         controller.navigationController?.popViewController(animated: true)
     }
 }
+

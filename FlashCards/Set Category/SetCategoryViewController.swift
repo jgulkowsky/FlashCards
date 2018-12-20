@@ -24,14 +24,14 @@ class SetCategoryViewController: UIViewController {
             textField.text = category.title
         }
         
-        warning.alpha = 0
+        warning.isHidden = true
     }
     
     @IBAction func onButtonPressed(_ sender: UIButton) {
         let title = textField.text
         let worker = SetCategoryWorker()
         if worker.isValid(title) {
-            warning.alpha = 0
+            warning.isHidden = true
             if let category = category {
                 worker.updateCategory(category, withTitle: title!)
             } else {
@@ -39,7 +39,7 @@ class SetCategoryViewController: UIViewController {
             }
             SetCategoryRouter(controller: self).routeToCategoryList()
         } else {
-            warning.alpha = 1
+            warning.isHidden = false
         }
     }
 }
