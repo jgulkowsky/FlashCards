@@ -20,6 +20,4 @@ struct Names {
     static let setCategoryNavigationTitle = "Set Category Title"
     static let setFlashCardNavigationTitleQuestion = "Set Question"
     static let setFlashCardNavigationTitleAnswer = "Set Answer"
-    
-    static let setCategoryTextFieldPlaceholder = "Add title"
 }

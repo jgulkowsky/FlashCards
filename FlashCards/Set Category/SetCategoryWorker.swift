@@ -29,7 +29,13 @@ class SetCategoryWorker {
         }
     }
     
-    func updateCategory(_ oldCategory: Category, withTitle title: String) {
-        oldCategory.title = title
+    func updateCategory(_ category: Category, withTitle title: String) {
+        do {
+            try realm.write {
+                category.title = title
+            }
+        } catch {
+            print("Error updating category \(error)")
+        }
     }
 }

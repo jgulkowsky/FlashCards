@@ -17,4 +17,13 @@ class CategoryListWorker {
         return realm.objects(Category.self)
     }
     
+    func deleteCategory(_ category: Category) {
+        do {
+            try realm.write {
+                realm.delete(category)
+            }
+        } catch {
+            print("Error deleting category \(error)")
+        }
+    }
 }

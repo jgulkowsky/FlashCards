@@ -37,4 +37,21 @@ class CategoryListViewController: UITableViewController {
         CategoryListRouter(controller: self, category: categoryList![indexPath.row])
             .routeToFlashCards()
     }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
+            CategoryListWorker().deleteCategory(self.categoryList![index.row])
+            tableView.reloadData()
+        }
+        delete.backgroundColor = .red
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
+            CategoryListRouter(controller: self, category: self.categoryList![index.row])
+                .routeToSetCategory()
+        }
+        edit.backgroundColor = .blue
+        
+        return [delete, edit]
+    }
 }

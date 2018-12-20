@@ -21,9 +21,7 @@ class SetCategoryViewController: UIViewController {
         navigationItem.title = Names.setCategoryNavigationTitle
         
         if let category = category {
-            textField.placeholder = category.title
-        } else {
-            textField.placeholder = Names.setCategoryTextFieldPlaceholder
+            textField.text = category.title
         }
         
         warning.alpha = 0
