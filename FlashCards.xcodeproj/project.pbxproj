@@ -26,6 +26,7 @@
 		CEF773C321CBD034005D81A4 /* FlashCardsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C221CBD034005D81A4 /* FlashCardsRouter.swift */; };
 		CEF773C521CBDD15005D81A4 /* SetFlashCardWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C421CBDD15005D81A4 /* SetFlashCardWorker.swift */; };
 		CEF773C721CBE022005D81A4 /* SetFlashCardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C621CBE022005D81A4 /* SetFlashCardRouter.swift */; };
+		CEF773C921CBF5AD005D81A4 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C821CBF5AD005D81A4 /* FlashCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		CEF773C221CBD034005D81A4 /* FlashCardsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsRouter.swift; sourceTree = "<group>"; };
 		CEF773C421CBDD15005D81A4 /* SetFlashCardWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardWorker.swift; sourceTree = "<group>"; };
 		CEF773C621CBE022005D81A4 /* SetFlashCardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardRouter.swift; sourceTree = "<group>"; };
+		CEF773C821CBF5AD005D81A4 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
 		FA210BD8BDF2F2BBE1454004 /* Pods-FlashCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCards.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 			children = (
 				CEF7737A21C95AF6005D81A4 /* FlashCardsViewController.swift */,
 				CEF773C221CBD034005D81A4 /* FlashCardsRouter.swift */,
+				CEF773C821CBF5AD005D81A4 /* FlashCardView.swift */,
 			);
 			path = "Flash Cards";
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
@@ -252,6 +256,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -291,6 +296,7 @@
 			files = (
 				CEF7737721C95AD3005D81A4 /* SetFlashCardViewController.swift in Sources */,
 				CEF773C521CBDD15005D81A4 /* SetFlashCardWorker.swift in Sources */,
+				CEF773C921CBF5AD005D81A4 /* FlashCardView.swift in Sources */,
 				CEF773C721CBE022005D81A4 /* SetFlashCardRouter.swift in Sources */,
 				CEF773C321CBD034005D81A4 /* FlashCardsRouter.swift in Sources */,
 				CEF7736621C9584F005D81A4 /* CategoryListViewController.swift in Sources */,

@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol FlashCardViewDelegate {
+    
+    func onFlashCardViewLongPress(_ flashCard: FlashCard)
+    func onFlashCardViewRemoved(_ flashCardView: FlashCardView)
+}
+
 class FlashCardsViewController: UIViewController {
 
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var noCardsLabel: UILabel!
     @IBOutlet weak var noCardsButton: UIButton!
     
@@ -24,9 +31,11 @@ class FlashCardsViewController: UIViewController {
         } else {
             noCardsLabel.isHidden = true
             noCardsButton.isHidden = true
-            
+        
             category.flashCards.forEach { flashCard in
-                print(flashCard)
+                let flashCardView = FlashCardView()
+                contentView.addSubview(flashCardView)
+                flashCardView.initialize(with: flashCard, self)
             }
         }
     }
@@ -34,5 +43,15 @@ class FlashCardsViewController: UIViewController {
     @IBAction func onNoCardsButtonPressed(_ sender: UIButton) {
         FlashCardsRouter(controller: self, category: category).routeToSetFlashCard()
     }
+}
+
+extension FlashCardsViewController: FlashCardViewDelegate {
     
+    func onFlashCardViewLongPress(_ flashCard: FlashCard) {
+        FlashCardsRouter(controller: self, category: category, flashCard: flashCard).routeToSetFlashCard()
+    }
+    
+    func onFlashCardViewRemoved(_ flashCardView: FlashCardView) {
+        flashCardView.removeFromSuperview()
+    }
 }
