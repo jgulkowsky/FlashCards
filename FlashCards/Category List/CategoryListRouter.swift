@@ -11,9 +11,9 @@ import UIKit
 class CategoryListRouter {
     
     private weak var controller: CategoryListViewController?
-    private var category: DataModels.Category?
+    private var category: Category?
     
-    init(controller: CategoryListViewController, category: DataModels.Category? = nil) {
+    init(controller: CategoryListViewController, category: Category? = nil) {
         self.controller = controller
         self.category = category
     }
@@ -36,11 +36,11 @@ class CategoryListRouter {
         return UIStoryboard.init(name: Names.storyBoard, bundle: Bundle.main).instantiateViewController(withIdentifier: id)
     }
     
-    private func send(_ category: DataModels.Category, to destinationVC: SetCategoryViewController) {
+    private func send(_ category: Category, to destinationVC: SetCategoryViewController) {
         destinationVC.category = category
     }
     
-    private func send(_ category: DataModels.Category, to destinationVC: FlashCardsViewController) {
+    private func send(_ category: Category, to destinationVC: FlashCardsViewController) {
         destinationVC.category = category
     }
 }

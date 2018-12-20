@@ -8,16 +8,12 @@
 
 import UIKit
 
-protocol FlashCardsGetWorkerDelegate {
-    func getFlashCards(_ flashCards: [DataModels.FlashCard])
-}
-
 class FlashCardsViewController: UIViewController {
 
-    var category: DataModels.Category!
+    var category: Category!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationItem.title = category.title
     }
 }

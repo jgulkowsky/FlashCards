@@ -13,10 +13,11 @@ class SetCategoryViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var warning: UILabel!
     
-    var category: DataModels.Category?
+    var category: Category?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         navigationItem.title = "Set Category Title"
         
         if let category = category {
@@ -24,10 +25,21 @@ class SetCategoryViewController: UIViewController {
         } else {
             textField.placeholder = "Add title"
         }
-        
     }
     
     @IBAction func onButtonPressed(_ sender: UIButton) {
-        
+        let title = textField.text
+        let worker = SetCategoryWorker()
+        if worker.isValid(title) {
+            warning.text = ""
+            if let category = category {
+                worker.updateCategory(category, withTitle: title!)
+            } else {
+                worker.addCategory(withTitle: title!)
+            }
+            //TODO: Route back
+        } else {
+            warning.text = "It's not valid title!"
+        }
     }
 }

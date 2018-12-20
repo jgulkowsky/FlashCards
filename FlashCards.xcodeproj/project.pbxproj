@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03759673C87FBD9615BD2F77 /* Pods_FlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B38452C8BDC5B3A825D25788 /* Pods_FlashCards.framework */; };
 		CEF7736421C9584F005D81A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7736321C9584F005D81A4 /* AppDelegate.swift */; };
 		CEF7736621C9584F005D81A4 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7736521C9584F005D81A4 /* CategoryListViewController.swift */; };
 		CEF7736921C9584F005D81A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF7736721C9584F005D81A4 /* Main.storyboard */; };
@@ -16,12 +17,16 @@
 		CEF7737921C95AEA005D81A4 /* SetCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7737821C95AEA005D81A4 /* SetCategoryViewController.swift */; };
 		CEF7737B21C95AF7005D81A4 /* FlashCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7737A21C95AF6005D81A4 /* FlashCardsViewController.swift */; };
 		CEF7737D21C9606B005D81A4 /* CategoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7737C21C9606B005D81A4 /* CategoryListRouter.swift */; };
-		CEF7737F21C960D3005D81A4 /* CategoryListGetWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7737E21C960D3005D81A4 /* CategoryListGetWorker.swift */; };
-		CEF773AD21CAA088005D81A4 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773AC21CAA087005D81A4 /* DataModels.swift */; };
+		CEF7737F21C960D3005D81A4 /* CategoryListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7737E21C960D3005D81A4 /* CategoryListWorker.swift */; };
 		CEF773B221CAAD64005D81A4 /* Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773B121CAAD64005D81A4 /* Names.swift */; };
+		CEF773B721CAF1F0005D81A4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773B621CAF1F0005D81A4 /* Category.swift */; };
+		CEF773B921CAF3A6005D81A4 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773B821CAF3A6005D81A4 /* FlashCard.swift */; };
+		CEF773BB21CB0FF4005D81A4 /* SetCategoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773BA21CB0FF4005D81A4 /* SetCategoryWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79FABBE0F55F6611105461D1 /* Pods-FlashCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCards.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards.release.xcconfig"; sourceTree = "<group>"; };
+		B38452C8BDC5B3A825D25788 /* Pods_FlashCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF7736021C9584F005D81A4 /* FlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF7736321C9584F005D81A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF7736521C9584F005D81A4 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
@@ -33,9 +38,12 @@
 		CEF7737821C95AEA005D81A4 /* SetCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryViewController.swift; sourceTree = "<group>"; };
 		CEF7737A21C95AF6005D81A4 /* FlashCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsViewController.swift; sourceTree = "<group>"; };
 		CEF7737C21C9606B005D81A4 /* CategoryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListRouter.swift; sourceTree = "<group>"; };
-		CEF7737E21C960D3005D81A4 /* CategoryListGetWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListGetWorker.swift; sourceTree = "<group>"; };
-		CEF773AC21CAA087005D81A4 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		CEF7737E21C960D3005D81A4 /* CategoryListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListWorker.swift; sourceTree = "<group>"; };
 		CEF773B121CAAD64005D81A4 /* Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Names.swift; sourceTree = "<group>"; };
+		CEF773B621CAF1F0005D81A4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CEF773B821CAF3A6005D81A4 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
+		CEF773BA21CB0FF4005D81A4 /* SetCategoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryWorker.swift; sourceTree = "<group>"; };
+		FA210BD8BDF2F2BBE1454004 /* Pods-FlashCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCards.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03759673C87FBD9615BD2F77 /* Pods_FlashCards.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05AEA66EC14732828BCB0A91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA210BD8BDF2F2BBE1454004 /* Pods-FlashCards.debug.xcconfig */,
+				79FABBE0F55F6611105461D1 /* Pods-FlashCards.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		0C41BC336D0C18628D1013D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B38452C8BDC5B3A825D25788 /* Pods_FlashCards.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CEF7735721C9584F005D81A4 = {
 			isa = PBXGroup;
 			children = (
 				CEF7736221C9584F005D81A4 /* FlashCards */,
 				CEF7736121C9584F005D81A4 /* Products */,
+				05AEA66EC14732828BCB0A91 /* Pods */,
+				0C41BC336D0C18628D1013D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,12 +96,12 @@
 		CEF7736221C9584F005D81A4 /* FlashCards */ = {
 			isa = PBXGroup;
 			children = (
-				CEF7737521C9585B005D81A4 /* CategoryList */,
-				CEF773AE21CAACD9005D81A4 /* FlashCards */,
-				CEF773AF21CAACE7005D81A4 /* SetCategory */,
-				CEF773B021CAACEE005D81A4 /* SetFlashCard */,
+				CEF773B521CAF1B1005D81A4 /* Data Model */,
+				CEF7737521C9585B005D81A4 /* Category List */,
+				CEF773AE21CAACD9005D81A4 /* Flash Cards */,
+				CEF773AF21CAACE7005D81A4 /* Set Category */,
+				CEF773B021CAACEE005D81A4 /* Set Flash Card */,
 				CEF7736321C9584F005D81A4 /* AppDelegate.swift */,
-				CEF773AC21CAA087005D81A4 /* DataModels.swift */,
 				CEF773B121CAAD64005D81A4 /* Names.swift */,
 				CEF7736721C9584F005D81A4 /* Main.storyboard */,
 				CEF7736A21C95850005D81A4 /* Assets.xcassets */,
@@ -83,38 +111,48 @@
 			path = FlashCards;
 			sourceTree = "<group>";
 		};
-		CEF7737521C9585B005D81A4 /* CategoryList */ = {
+		CEF7737521C9585B005D81A4 /* Category List */ = {
 			isa = PBXGroup;
 			children = (
 				CEF7736521C9584F005D81A4 /* CategoryListViewController.swift */,
 				CEF7737C21C9606B005D81A4 /* CategoryListRouter.swift */,
-				CEF7737E21C960D3005D81A4 /* CategoryListGetWorker.swift */,
+				CEF7737E21C960D3005D81A4 /* CategoryListWorker.swift */,
 			);
-			path = CategoryList;
+			path = "Category List";
 			sourceTree = "<group>";
 		};
-		CEF773AE21CAACD9005D81A4 /* FlashCards */ = {
+		CEF773AE21CAACD9005D81A4 /* Flash Cards */ = {
 			isa = PBXGroup;
 			children = (
 				CEF7737A21C95AF6005D81A4 /* FlashCardsViewController.swift */,
 			);
-			path = FlashCards;
+			path = "Flash Cards";
 			sourceTree = "<group>";
 		};
-		CEF773AF21CAACE7005D81A4 /* SetCategory */ = {
+		CEF773AF21CAACE7005D81A4 /* Set Category */ = {
 			isa = PBXGroup;
 			children = (
 				CEF7737821C95AEA005D81A4 /* SetCategoryViewController.swift */,
+				CEF773BA21CB0FF4005D81A4 /* SetCategoryWorker.swift */,
 			);
-			path = SetCategory;
+			path = "Set Category";
 			sourceTree = "<group>";
 		};
-		CEF773B021CAACEE005D81A4 /* SetFlashCard */ = {
+		CEF773B021CAACEE005D81A4 /* Set Flash Card */ = {
 			isa = PBXGroup;
 			children = (
 				CEF7737621C95AD3005D81A4 /* SetFlashCardViewController.swift */,
 			);
-			path = SetFlashCard;
+			path = "Set Flash Card";
+			sourceTree = "<group>";
+		};
+		CEF773B521CAF1B1005D81A4 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEF773B621CAF1F0005D81A4 /* Category.swift */,
+				CEF773B821CAF3A6005D81A4 /* FlashCard.swift */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEF7737221C95850005D81A4 /* Build configuration list for PBXNativeTarget "FlashCards" */;
 			buildPhases = (
+				99ADD459A75A2F403FC9EFD8 /* [CP] Check Pods Manifest.lock */,
 				CEF7735C21C9584F005D81A4 /* Sources */,
 				CEF7735D21C9584F005D81A4 /* Frameworks */,
 				CEF7735E21C9584F005D81A4 /* Resources */,
+				6FC27CDDDDD6262893E85A29 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,19 +223,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6FC27CDDDDD6262893E85A29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99ADD459A75A2F403FC9EFD8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlashCards-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CEF7735C21C9584F005D81A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CEF7737721C95AD3005D81A4 /* SetFlashCardViewController.swift in Sources */,
-				CEF773AD21CAA088005D81A4 /* DataModels.swift in Sources */,
 				CEF7736621C9584F005D81A4 /* CategoryListViewController.swift in Sources */,
 				CEF773B221CAAD64005D81A4 /* Names.swift in Sources */,
 				CEF7737D21C9606B005D81A4 /* CategoryListRouter.swift in Sources */,
+				CEF773BB21CB0FF4005D81A4 /* SetCategoryWorker.swift in Sources */,
+				CEF773B921CAF3A6005D81A4 /* FlashCard.swift in Sources */,
 				CEF7737B21C95AF7005D81A4 /* FlashCardsViewController.swift in Sources */,
+				CEF773B721CAF1F0005D81A4 /* Category.swift in Sources */,
 				CEF7737921C95AEA005D81A4 /* SetCategoryViewController.swift in Sources */,
-				CEF7737F21C960D3005D81A4 /* CategoryListGetWorker.swift in Sources */,
+				CEF7737F21C960D3005D81A4 /* CategoryListWorker.swift in Sources */,
 				CEF7736421C9584F005D81A4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +431,7 @@
 		};
 		CEF7737321C95850005D81A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA210BD8BDF2F2BBE1454004 /* Pods-FlashCards.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -358,6 +450,7 @@
 		};
 		CEF7737421C95850005D81A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79FABBE0F55F6611105461D1 /* Pods-FlashCards.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
