@@ -22,6 +22,7 @@
 		CEF773B721CAF1F0005D81A4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773B621CAF1F0005D81A4 /* Category.swift */; };
 		CEF773B921CAF3A6005D81A4 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773B821CAF3A6005D81A4 /* FlashCard.swift */; };
 		CEF773BB21CB0FF4005D81A4 /* SetCategoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773BA21CB0FF4005D81A4 /* SetCategoryWorker.swift */; };
+		CEF773BD21CB1D66005D81A4 /* SetCategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773BC21CB1D66005D81A4 /* SetCategoryRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		CEF773B621CAF1F0005D81A4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CEF773B821CAF3A6005D81A4 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		CEF773BA21CB0FF4005D81A4 /* SetCategoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryWorker.swift; sourceTree = "<group>"; };
+		CEF773BC21CB1D66005D81A4 /* SetCategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryRouter.swift; sourceTree = "<group>"; };
 		FA210BD8BDF2F2BBE1454004 /* Pods-FlashCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCards.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF7737821C95AEA005D81A4 /* SetCategoryViewController.swift */,
+				CEF773BC21CB1D66005D81A4 /* SetCategoryRouter.swift */,
 				CEF773BA21CB0FF4005D81A4 /* SetCategoryWorker.swift */,
 			);
 			path = "Set Category";
@@ -282,6 +285,7 @@
 				CEF773B221CAAD64005D81A4 /* Names.swift in Sources */,
 				CEF7737D21C9606B005D81A4 /* CategoryListRouter.swift in Sources */,
 				CEF773BB21CB0FF4005D81A4 /* SetCategoryWorker.swift in Sources */,
+				CEF773BD21CB1D66005D81A4 /* SetCategoryRouter.swift in Sources */,
 				CEF773B921CAF3A6005D81A4 /* FlashCard.swift in Sources */,
 				CEF7737B21C95AF7005D81A4 /* FlashCardsViewController.swift in Sources */,
 				CEF773B721CAF1F0005D81A4 /* Category.swift in Sources */,

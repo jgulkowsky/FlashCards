@@ -18,28 +18,30 @@ class SetCategoryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationItem.title = "Set Category Title"
+        navigationItem.title = Names.setCategoryNavigationTitle
         
         if let category = category {
             textField.placeholder = category.title
         } else {
-            textField.placeholder = "Add title"
+            textField.placeholder = Names.setCategoryTextFieldPlaceholder
         }
+        
+        warning.alpha = 0
     }
     
     @IBAction func onButtonPressed(_ sender: UIButton) {
         let title = textField.text
         let worker = SetCategoryWorker()
         if worker.isValid(title) {
-            warning.text = ""
+            warning.alpha = 0
             if let category = category {
                 worker.updateCategory(category, withTitle: title!)
             } else {
                 worker.addCategory(withTitle: title!)
             }
-            //TODO: Route back
+            SetCategoryRouter(controller: self).routeToCategoryList()
         } else {
-            warning.text = "It's not valid title!"
+            warning.alpha = 1
         }
     }
 }
