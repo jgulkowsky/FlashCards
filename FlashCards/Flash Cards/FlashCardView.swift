@@ -70,7 +70,7 @@ class FlashCardView: UIView {
     @objc private func onLongPress(_ recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == .ended {
             //TODO: Show alert -> delete or edit
-            delegate.onFlashCardViewLongPress(flashCard)
+            delegate.onFlashCardViewLongPress(self, flashCard)
         }
     }
     

@@ -27,6 +27,7 @@
 		CEF773C521CBDD15005D81A4 /* SetFlashCardWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C421CBDD15005D81A4 /* SetFlashCardWorker.swift */; };
 		CEF773C721CBE022005D81A4 /* SetFlashCardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C621CBE022005D81A4 /* SetFlashCardRouter.swift */; };
 		CEF773C921CBF5AD005D81A4 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C821CBF5AD005D81A4 /* FlashCardView.swift */; };
+		CEF773CF21CC1FA4005D81A4 /* FlashCardsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773CE21CC1FA4005D81A4 /* FlashCardsWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		CEF773C421CBDD15005D81A4 /* SetFlashCardWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardWorker.swift; sourceTree = "<group>"; };
 		CEF773C621CBE022005D81A4 /* SetFlashCardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardRouter.swift; sourceTree = "<group>"; };
 		CEF773C821CBF5AD005D81A4 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
+		CEF773CE21CC1FA4005D81A4 /* FlashCardsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsWorker.swift; sourceTree = "<group>"; };
 		FA210BD8BDF2F2BBE1454004 /* Pods-FlashCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCards.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 				CEF7737A21C95AF6005D81A4 /* FlashCardsViewController.swift */,
 				CEF773C221CBD034005D81A4 /* FlashCardsRouter.swift */,
 				CEF773C821CBF5AD005D81A4 /* FlashCardView.swift */,
+				CEF773CE21CC1FA4005D81A4 /* FlashCardsWorker.swift */,
 			);
 			path = "Flash Cards";
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				CEF7737B21C95AF7005D81A4 /* FlashCardsViewController.swift in Sources */,
 				CEF773B721CAF1F0005D81A4 /* Category.swift in Sources */,
 				CEF7737921C95AEA005D81A4 /* SetCategoryViewController.swift in Sources */,
+				CEF773CF21CC1FA4005D81A4 /* FlashCardsWorker.swift in Sources */,
 				CEF7737F21C960D3005D81A4 /* CategoryListWorker.swift in Sources */,
 				CEF7736421C9584F005D81A4 /* AppDelegate.swift in Sources */,
 			);
