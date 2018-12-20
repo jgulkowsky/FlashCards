@@ -38,9 +38,15 @@ class FlashCardsViewController: UIViewController {
                 flashCardView.initialize(with: flashCard, self)
             }
         }
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddButtonPressed))
     }
     
     @IBAction func onNoCardsButtonPressed(_ sender: UIButton) {
+        FlashCardsRouter(controller: self, category: category).routeToSetFlashCard()
+    }
+    
+    @objc private func onAddButtonPressed() {
         FlashCardsRouter(controller: self, category: category).routeToSetFlashCard()
     }
 }
