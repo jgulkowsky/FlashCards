@@ -17,7 +17,7 @@ class FlashCardsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.title = category.title
+        title = category.title
         
         if category.flashCards.isEmpty {
             

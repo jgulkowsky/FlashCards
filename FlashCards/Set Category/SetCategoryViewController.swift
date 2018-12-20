@@ -18,7 +18,7 @@ class SetCategoryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationItem.title = Names.setCategoryNavigationTitle
+        title = Names.setCategoryNavigationTitle
         
         if let category = category {
             textField.text = category.title

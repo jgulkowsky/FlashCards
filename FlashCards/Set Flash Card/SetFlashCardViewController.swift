@@ -20,7 +20,7 @@ class SetFlashCardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationItem.title = Names.setFlashCardNavigationTitle
+        title = Names.setFlashCardNavigationTitle
         
         if let flashCard = flashCard {
             questionTextView.text = flashCard.question
