@@ -17,6 +17,7 @@ class SetCategoryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setBackButtonTitle("Back")
         
         title = Names.setCategoryNavigationTitle
         

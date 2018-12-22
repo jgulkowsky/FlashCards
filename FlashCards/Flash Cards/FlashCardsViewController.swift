@@ -24,6 +24,8 @@ class FlashCardsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setBackButtonTitle("Back")
+        
         title = category.title
         
         if category.flashCards.isEmpty {

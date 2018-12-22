@@ -15,6 +15,7 @@ class CategoryListViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setBackButtonTitle("Back")
         categoryList = CategoryListWorker().getCategoryList()
         tableView.reloadData()
     }
