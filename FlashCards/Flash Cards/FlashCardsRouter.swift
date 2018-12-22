@@ -11,8 +11,8 @@ import UIKit
 class FlashCardsRouter {
     
     private weak var controller: UIViewController!
-    private weak var category: Category!
-    private weak var flashCard: FlashCard?
+    private var category: Category!
+    private var flashCard: FlashCard?
     
     init(controller: UIViewController, category: Category, flashCard: FlashCard? = nil) {
         self.controller = controller
@@ -21,9 +21,10 @@ class FlashCardsRouter {
     }
     
     func routeToSetFlashCard() {
-        let vc = UIStoryboard.init(name: Names.storyBoard, bundle: Bundle.main).instantiateViewController(withIdentifier: Names.setFlashCardViewController) as! SetFlashCardViewController
+        let vc = UIStoryboard.init(name: Names.storyBoard, bundle: Bundle.main).instantiateViewController(withIdentifier: Names.setFlashCardQuestionViewController) as! SetFlashCardQuestionViewController
         vc.category = category
         vc.flashCard = flashCard
+        vc.flashCardsVC = controller
         controller.navigationController?.pushViewController(vc, animated: true)
     }
 }

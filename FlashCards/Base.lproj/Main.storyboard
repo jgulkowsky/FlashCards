@@ -170,78 +170,126 @@
             </objects>
             <point key="canvasLocation" x="1815.2" y="-24.7376311844078"/>
         </scene>
-        <!--Set Flash Card View Controller-->
+        <!--Set Flash Card Question View Controller-->
         <scene sceneID="6mU-Tj-HZk">
             <objects>
-                <viewController storyboardIdentifier="SetFlashCardViewController" id="cE0-ab-ANm" userLabel="Set Flash Card View Controller" customClass="SetFlashCardViewController" customModule="FlashCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetFlashCardQuestionViewController" id="cE0-ab-ANm" userLabel="Set Flash Card Question View Controller" customClass="SetFlashCardQuestionViewController" customModule="FlashCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B1i-zp-S1c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add question" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cww-s0-O1P">
-                                <rect key="frame" x="65" y="144" width="245" height="60"/>
+                                <rect key="frame" x="65" y="144" width="245" height="125"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="iVN-EM-B9O"/>
+                                    <constraint firstAttribute="height" constant="125" id="0ms-IS-QQm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text is not valid!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-PB-mLi">
-                                <rect key="frame" x="65" y="288" width="245" height="21"/>
+                                <rect key="frame" x="65" y="281" width="245" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="7It-q2-l2k"/>
+                                    <constraint firstAttribute="height" constant="21" id="cN3-9k-ihu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xuq-wF-E7l">
-                                <rect key="frame" x="127.5" y="321" width="120" height="46"/>
+                                <rect key="frame" x="127.5" y="314" width="120" height="46"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="i9E-AP-pYp"/>
-                                    <constraint firstAttribute="width" constant="120" id="qjg-TE-rts"/>
+                                    <constraint firstAttribute="width" constant="120" id="07n-lk-qjs"/>
+                                    <constraint firstAttribute="height" constant="46" id="bcs-3h-h94"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="onButtonPressed:" destination="cE0-ab-ANm" eventType="touchUpInside" id="bU8-H3-xdo"/>
+                                    <action selector="onButtonPressed:" destination="cE0-ab-ANm" eventType="touchUpInside" id="e3s-87-abc"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add answer" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8A1-Pj-fUw">
-                                <rect key="frame" x="65" y="216" width="245" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Uuj-sC-e9X"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="FU0-PB-mLi" firstAttribute="leading" secondItem="QXW-IF-XH5" secondAttribute="leading" constant="65" id="049-bd-w5o"/>
-                            <constraint firstItem="QXW-IF-XH5" firstAttribute="trailing" secondItem="8A1-Pj-fUw" secondAttribute="trailing" constant="65" id="44X-ZJ-flQ"/>
-                            <constraint firstItem="QXW-IF-XH5" firstAttribute="trailing" secondItem="FU0-PB-mLi" secondAttribute="trailing" constant="65" id="7cq-uW-eLk"/>
-                            <constraint firstItem="8A1-Pj-fUw" firstAttribute="top" secondItem="cww-s0-O1P" secondAttribute="bottom" constant="12" id="Fmc-qb-yrB"/>
-                            <constraint firstItem="Xuq-wF-E7l" firstAttribute="top" secondItem="FU0-PB-mLi" secondAttribute="bottom" constant="12" id="PoV-ap-74z"/>
-                            <constraint firstItem="FU0-PB-mLi" firstAttribute="top" secondItem="8A1-Pj-fUw" secondAttribute="bottom" constant="12" id="a93-ad-GGC"/>
-                            <constraint firstItem="cww-s0-O1P" firstAttribute="leading" secondItem="QXW-IF-XH5" secondAttribute="leading" constant="65" id="gDV-Zj-BgV"/>
-                            <constraint firstItem="QXW-IF-XH5" firstAttribute="trailing" secondItem="cww-s0-O1P" secondAttribute="trailing" constant="65" id="iBG-Ng-bWt"/>
-                            <constraint firstItem="8A1-Pj-fUw" firstAttribute="leading" secondItem="QXW-IF-XH5" secondAttribute="leading" constant="65" id="mIX-IL-by9"/>
-                            <constraint firstItem="Xuq-wF-E7l" firstAttribute="centerX" secondItem="B1i-zp-S1c" secondAttribute="centerX" id="qkP-DK-tIM"/>
-                            <constraint firstItem="cww-s0-O1P" firstAttribute="top" secondItem="QXW-IF-XH5" secondAttribute="top" constant="80" id="xcU-zF-Ich"/>
+                            <constraint firstItem="Xuq-wF-E7l" firstAttribute="top" secondItem="FU0-PB-mLi" secondAttribute="bottom" constant="12" id="Gyz-il-Qmt"/>
+                            <constraint firstItem="FU0-PB-mLi" firstAttribute="top" secondItem="cww-s0-O1P" secondAttribute="bottom" constant="12" id="Mce-Xs-Dad"/>
+                            <constraint firstItem="cww-s0-O1P" firstAttribute="top" secondItem="QXW-IF-XH5" secondAttribute="top" constant="80" id="Tfy-Ec-1hA"/>
+                            <constraint firstItem="FU0-PB-mLi" firstAttribute="leading" secondItem="QXW-IF-XH5" secondAttribute="leading" constant="65" id="X8c-gS-YdV"/>
+                            <constraint firstItem="cww-s0-O1P" firstAttribute="leading" secondItem="QXW-IF-XH5" secondAttribute="leading" constant="65" id="l6x-xV-Zkq"/>
+                            <constraint firstItem="QXW-IF-XH5" firstAttribute="trailing" secondItem="cww-s0-O1P" secondAttribute="trailing" constant="65" id="raB-UT-Z8k"/>
+                            <constraint firstItem="Xuq-wF-E7l" firstAttribute="centerX" secondItem="B1i-zp-S1c" secondAttribute="centerX" id="yRs-67-w6l"/>
+                            <constraint firstItem="QXW-IF-XH5" firstAttribute="trailing" secondItem="FU0-PB-mLi" secondAttribute="trailing" constant="65" id="ztN-A3-rhn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QXW-IF-XH5"/>
                     </view>
                     <connections>
-                        <outlet property="answerTextView" destination="8A1-Pj-fUw" id="574-eR-Roa"/>
-                        <outlet property="questionTextView" destination="cww-s0-O1P" id="SXd-ap-q6B"/>
+                        <outlet property="textView" destination="cww-s0-O1P" id="p4v-Cx-j5O"/>
                         <outlet property="warning" destination="FU0-PB-mLi" id="j88-bu-vSa"/>
+                        <segue destination="TLX-tZ-5t1" kind="show" id="x8w-5q-agz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDk-yL-765" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1813.5999999999999" y="714.69265367316348"/>
+        </scene>
+        <!--Set Flash Card Answer View Controller-->
+        <scene sceneID="eM7-6l-wIf">
+            <objects>
+                <viewController storyboardIdentifier="SetFlashCardAnswerViewController" id="TLX-tZ-5t1" userLabel="Set Flash Card Answer View Controller" customClass="SetFlashCardAnswerViewController" customModule="FlashCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="50S-Br-N8s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add answer" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="guW-sy-wqB">
+                                <rect key="frame" x="65" y="144" width="245" height="125"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="aAZ-Kx-k6b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text is not valid!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miv-n6-g8Y">
+                                <rect key="frame" x="65" y="281" width="245" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="wmy-OT-xwU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kuf-f4-MjC">
+                                <rect key="frame" x="127.5" y="314" width="120" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="h0y-IC-5mu"/>
+                                    <constraint firstAttribute="width" constant="120" id="zDC-Aw-rhy"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onButtonPressed:" destination="TLX-tZ-5t1" eventType="touchUpInside" id="aNF-pz-fp3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="guW-sy-wqB" firstAttribute="top" secondItem="gAi-Yj-JuP" secondAttribute="top" constant="80" id="A9M-ug-2j5"/>
+                            <constraint firstItem="miv-n6-g8Y" firstAttribute="top" secondItem="guW-sy-wqB" secondAttribute="bottom" constant="12" id="G2z-V0-E7N"/>
+                            <constraint firstItem="guW-sy-wqB" firstAttribute="leading" secondItem="gAi-Yj-JuP" secondAttribute="leading" constant="65" id="NIh-I6-N2H"/>
+                            <constraint firstItem="gAi-Yj-JuP" firstAttribute="trailing" secondItem="guW-sy-wqB" secondAttribute="trailing" constant="65" id="Wb2-vD-uyV"/>
+                            <constraint firstItem="miv-n6-g8Y" firstAttribute="leading" secondItem="gAi-Yj-JuP" secondAttribute="leading" constant="65" id="Zdf-Zf-5Dr"/>
+                            <constraint firstItem="Kuf-f4-MjC" firstAttribute="top" secondItem="miv-n6-g8Y" secondAttribute="bottom" constant="12" id="bVT-YX-a7O"/>
+                            <constraint firstItem="Kuf-f4-MjC" firstAttribute="centerX" secondItem="50S-Br-N8s" secondAttribute="centerX" id="j5Y-dV-50S"/>
+                            <constraint firstItem="gAi-Yj-JuP" firstAttribute="trailing" secondItem="miv-n6-g8Y" secondAttribute="trailing" constant="65" id="zGW-SQ-48n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gAi-Yj-JuP"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="guW-sy-wqB" id="LS0-bE-TXi"/>
+                        <outlet property="warning" destination="miv-n6-g8Y" id="aq8-Yu-HgV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Mb-Z9-GvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2644" y="715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tqi-aw-cON">

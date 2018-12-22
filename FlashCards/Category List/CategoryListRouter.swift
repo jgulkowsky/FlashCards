@@ -11,7 +11,7 @@ import UIKit
 class CategoryListRouter {
     
     private weak var controller: UIViewController!
-    private weak var category: Category?
+    private var category: Category?
     
     init(controller: UIViewController, category: Category? = nil) {
         self.controller = controller
