@@ -20,7 +20,7 @@ class SetFlashCardAnswerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setBackButtonTitle("Back")
+        setBackButtonTitle()
         
         title = Names.setFlashCardAnswerNavigationTitle
         
