@@ -34,6 +34,11 @@ class FlashCardView: UIView {
         initializeView()
         initializeLabel()
         initializeGestures()
+        self.isHidden = true
+    }
+    
+    func show() {
+        self.isHidden = false
     }
     
     private func initializeView() {
@@ -222,7 +227,7 @@ extension FlashCardView {
                 self.center = destination
                 self.transform = CGAffineTransform.identity.rotated(by: rotationAngle)
         }) { isFinished in
-            self.delegate.onFlashCardViewRemoved(self)
+            self.delegate.onFlashCardViewRemoved()
         }
     }
     

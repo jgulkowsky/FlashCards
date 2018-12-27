@@ -11,7 +11,7 @@ import UIKit
 protocol FlashCardViewDelegate {
     
     func onFlashCardViewLongPress(_ flashCardView: FlashCardView, _ flashCard: FlashCard)
-    func onFlashCardViewRemoved(_ flashCardView: FlashCardView)
+    func onFlashCardViewRemoved()
 }
 
 class FlashCardsViewController: UIViewController {
@@ -20,6 +20,8 @@ class FlashCardsViewController: UIViewController {
     @IBOutlet weak var noCardsButton: UIButton!
     
     var category: Category!
+    
+    private var cardViews = [FlashCardView]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -30,6 +32,14 @@ class FlashCardsViewController: UIViewController {
             setNoCardsItemsVisibility(to: false)
             addCards()
         }
+        showNextCardReshuffleButtonOrNoCardsItems()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        cardViews.forEach { card in
+            card.removeFromSuperview()
+        }
+        cardViews.removeAll()
     }
     
     @IBAction func onNoCardsButtonPressed(_ sender: UIButton) {
@@ -61,6 +71,19 @@ extension FlashCardsViewController {
             let flashCardView = FlashCardView()
             view.addSubview(flashCardView)
             flashCardView.initialize(with: flashCard, self, self)
+            cardViews.append(flashCardView)
+        }
+        cardViews.shuffle()
+    }
+    
+    private func showNextCardReshuffleButtonOrNoCardsItems() {
+        if category.flashCards.isEmpty {
+            setNoCardsItemsVisibility(to: true)
+        } else if self.cardViews.isEmpty {
+            print("Wanna reshuffle?")
+            //TODO: show reshuffle button
+        } else {
+            cardViews[0].show()
         }
     }
 }
@@ -71,8 +94,8 @@ extension FlashCardsViewController: FlashCardViewDelegate {
         showAlert(flashCardView, flashCard)
     }
     
-    func onFlashCardViewRemoved(_ flashCardView: FlashCardView) {
-        flashCardView.removeFromSuperview()
+    func onFlashCardViewRemoved() {
+        removeCardFromDeck()
     }
     
     private func showAlert(_ flashCardView: FlashCardView, _ flashCard: FlashCard) {
@@ -84,15 +107,17 @@ extension FlashCardsViewController: FlashCardViewDelegate {
         
         alert.addAction(UIAlertAction(title: Names.flashCardsAlertDeleteTitle, style: .destructive) { action in
             FlashCardsWorker().deleteFlashCard(flashCard)
-            flashCardView.removeFromSuperview()
-            
-            if self.category.flashCards.isEmpty {
-                self.setNoCardsItemsVisibility(to: true)
-            }
+            self.removeCardFromDeck()
         })
         
         alert.addAction(UIAlertAction(title: Names.flashCardsAlertCancelTitle, style: .cancel, handler: nil))
         
         self.present(alert, animated: true)
+    }
+    
+    private func removeCardFromDeck() {
+        cardViews[0].removeFromSuperview()
+        cardViews.remove(at: 0)
+        showNextCardReshuffleButtonOrNoCardsItems()
     }
 }
