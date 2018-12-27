@@ -9,6 +9,7 @@
 import Foundation
 
 struct Names {
+    
     static let categoryListCell = "CategoryListCell"
     static let storyBoard = "Main"
     

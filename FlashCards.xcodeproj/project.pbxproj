@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03759673C87FBD9615BD2F77 /* Pods_FlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B38452C8BDC5B3A825D25788 /* Pods_FlashCards.framework */; };
+		CE46A88E21D4FC5D00F0B4CC /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46A88D21D4FC5D00F0B4CC /* AnimationConstants.swift */; };
 		CE78822721CE73F1002F8640 /* BackButtonTitleSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78822621CE73F1002F8640 /* BackButtonTitleSetter.swift */; };
 		CE78822A21CE7A47002F8640 /* SetFlashCardAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78822921CE7A47002F8640 /* SetFlashCardAnswerViewController.swift */; };
 		CE78822C21CE7B95002F8640 /* SetFlashCardAnswerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78822B21CE7B95002F8640 /* SetFlashCardAnswerRouter.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		79FABBE0F55F6611105461D1 /* Pods-FlashCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCards.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards.release.xcconfig"; sourceTree = "<group>"; };
 		B38452C8BDC5B3A825D25788 /* Pods_FlashCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE46A88D21D4FC5D00F0B4CC /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
 		CE78822621CE73F1002F8640 /* BackButtonTitleSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonTitleSetter.swift; sourceTree = "<group>"; };
 		CE78822921CE7A47002F8640 /* SetFlashCardAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardAnswerViewController.swift; sourceTree = "<group>"; };
 		CE78822B21CE7B95002F8640 /* SetFlashCardAnswerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardAnswerRouter.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				CEF773B021CAACEE005D81A4 /* Set Flash Card Question */,
 				CE78822821CE7A1D002F8640 /* Set Flash Card Answer */,
 				CEF7736321C9584F005D81A4 /* AppDelegate.swift */,
+				CE46A88D21D4FC5D00F0B4CC /* AnimationConstants.swift */,
 				CEF773B121CAAD64005D81A4 /* Names.swift */,
 				CEF7736721C9584F005D81A4 /* Main.storyboard */,
 				CEF7736A21C95850005D81A4 /* Assets.xcassets */,
@@ -165,9 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				CEF7737A21C95AF6005D81A4 /* FlashCardsViewController.swift */,
+				CEF773C821CBF5AD005D81A4 /* FlashCardView.swift */,
 				CEF773C221CBD034005D81A4 /* FlashCardsRouter.swift */,
 				CEF773CE21CC1FA4005D81A4 /* FlashCardsWorker.swift */,
-				CEF773C821CBF5AD005D81A4 /* FlashCardView.swift */,
 			);
 			path = "Flash Cards";
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				CEF773C721CBE022005D81A4 /* SetFlashCardQuestionRouter.swift in Sources */,
 				CEF773C321CBD034005D81A4 /* FlashCardsRouter.swift in Sources */,
 				CEF7736621C9584F005D81A4 /* CategoryListViewController.swift in Sources */,
+				CE46A88E21D4FC5D00F0B4CC /* AnimationConstants.swift in Sources */,
 				CEF773B221CAAD64005D81A4 /* Names.swift in Sources */,
 				CE78822721CE73F1002F8640 /* BackButtonTitleSetter.swift in Sources */,
 				CEF7737D21C9606B005D81A4 /* CategoryListRouter.swift in Sources */,
