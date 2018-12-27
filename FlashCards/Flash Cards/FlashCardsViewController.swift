@@ -16,7 +16,6 @@ protocol FlashCardViewDelegate {
 
 class FlashCardsViewController: UIViewController {
 
-    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var noCardsLabel: UILabel!
     @IBOutlet weak var noCardsButton: UIButton!
     
@@ -60,8 +59,8 @@ extension FlashCardsViewController {
     private func addCards() {
         category.flashCards.forEach { flashCard in
             let flashCardView = FlashCardView()
-            contentView.addSubview(flashCardView)
-            flashCardView.initialize(with: flashCard, self)
+            view.addSubview(flashCardView)
+            flashCardView.initialize(with: flashCard, self, self)
         }
     }
 }

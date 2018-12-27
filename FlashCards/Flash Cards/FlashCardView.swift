@@ -18,6 +18,7 @@ class FlashCardView: UIView {
     private var panGesture: UIPanGestureRecognizer!
     
     private var flashCard: FlashCard!
+    private var parentViewController: UIViewController!
     private var delegate: FlashCardViewDelegate!
     
     private var isQuestionVisible = true
@@ -26,8 +27,9 @@ class FlashCardView: UIView {
     private var cardLastVelocitiesArrayIndex = 0
     private var averageCardVelocity = CGPoint(x: 0, y: 0)
     
-    func initialize(with flashCard: FlashCard, _ delegate: FlashCardViewDelegate) {
+    func initialize(with flashCard: FlashCard, _ parentViewController: UIViewController, _ delegate: FlashCardViewDelegate) {
         self.flashCard = flashCard
+        self.parentViewController = parentViewController
         self.delegate = delegate
         initializeView()
         initializeLabel()
@@ -36,7 +38,7 @@ class FlashCardView: UIView {
     
     private func initializeView() {
         self.backgroundColor = UIColor.red
-        self.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+        self.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: getExtraTopOffset() + 10, left: 10, bottom: 10, right: 10))
         self.layer.cornerRadius = 20
     }
     
@@ -88,16 +90,19 @@ class FlashCardView: UIView {
     private func updateLabel() {
         label.text = isQuestionVisible ? flashCard.question : flashCard.answer
     }
+    
+    private func getExtraTopOffset() -> CGFloat {
+        return UIApplication.shared.statusBarFrame.height + (parentViewController.navigationController?.navigationBar.frame.height ?? 0)
+    }
 }
 
-//MARK: - Swipe Extension - General Logic
+//MARK: - Swipe Extension - General Logic, Moving Back, Rotation
 extension FlashCardView {
     
     private func moveCard() {
-        let parentView = self.superview!
-        let translation = panGesture.translation(in: parentView)
-        self.center.x = parentView.center.x + translation.x
-        self.center.y = parentView.center.y + translation.y
+        let translation = panGesture.translation(in: self.superview!)
+        self.center.x = self.superview!.center.x + translation.x
+        self.center.y = self.superview!.center.y + getExtraTopOffset() / 2 + translation.y
     }
     
     private func rotateCard() {
@@ -153,7 +158,8 @@ extension FlashCardView {
             initialSpringVelocity: 0,
             options: UIView.AnimationOptions.curveEaseInOut,
             animations: {
-                self.center = self.superview!.center
+                let center = self.superview!.center
+                self.center = CGPoint(x: center.x, y: self.getExtraTopOffset() / 2 + center.y)
                 self.transform = CGAffineTransform.identity.rotated(by: 0)
         }, completion: nil)
     }

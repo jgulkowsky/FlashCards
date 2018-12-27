@@ -147,8 +147,8 @@
 				CE46A88D21D4FC5D00F0B4CC /* AnimationConstants.swift */,
 				CEF773B121CAAD64005D81A4 /* Names.swift */,
 				CEF7736721C9584F005D81A4 /* Main.storyboard */,
-				CEF7736A21C95850005D81A4 /* Assets.xcassets */,
 				CEF7736C21C95850005D81A4 /* LaunchScreen.storyboard */,
+				CEF7736A21C95850005D81A4 /* Assets.xcassets */,
 				CEF7736F21C95850005D81A4 /* Info.plist */,
 			);
 			path = FlashCards;
