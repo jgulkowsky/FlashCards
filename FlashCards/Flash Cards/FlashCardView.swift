@@ -76,9 +76,7 @@ class FlashCardView: UIView {
     }
     
     @objc private func onTap(_ recognizer: UITapGestureRecognizer) {
-        UIView.transition(with: self, duration: 1, options: .transitionFlipFromRight, animations: nil, completion: nil)
-        isQuestionVisible = !isQuestionVisible
-        updateLabel()
+        flip()
     }
     
     @objc private func onLongPress(_ recognizer: UILongPressGestureRecognizer) {
@@ -96,6 +94,16 @@ class FlashCardView: UIView {
     }
 }
 
+//MARK: - Flip Extension
+extension FlashCardView {
+    
+    private func flip() {
+        UIView.transition(with: self, duration: 1, options: .transitionFlipFromRight, animations: nil, completion: nil)
+        isQuestionVisible = !isQuestionVisible
+        updateLabel()
+    }
+}
+
 //MARK: - Swipe Extension - General Logic, Moving Back, Rotation
 extension FlashCardView {
     
@@ -106,12 +114,7 @@ extension FlashCardView {
     }
     
     private func rotateCard() {
-        let cardDistanceFromCenter = getDistanceFromCenter().x
-        setRotation(forDistanceFromCenterX: cardDistanceFromCenter)
-    }
-    
-    private func setRotation(forDistanceFromCenterX distanceFromCenterX: CGFloat) {
-        let angle = calculateRotationAngle(forDistanceFromCenterX: distanceFromCenterX)
+        let angle = calculateRotationAngle(forDistanceFromCenterX: getDistanceFromCenter().x)
         self.transform = CGAffineTransform.identity.rotated(by: angle)
     }
     
@@ -147,7 +150,7 @@ extension FlashCardView {
     
     private func getDistanceFromCenter() -> CGPoint {
         let parentView = self.superview!
-        return CGPoint(x: self.center.x - parentView.center.x, y: self.center.y - parentView.center.y)
+        return CGPoint(x: self.center.x - parentView.center.x, y: self.center.y - parentView.center.y + getExtraTopOffset() / 2)
     }
     
     private func moveCardBackToCenter() {
