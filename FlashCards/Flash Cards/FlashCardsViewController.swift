@@ -34,10 +34,8 @@ class FlashCardsViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        cardViews.forEach { card in
-            card.removeFromSuperview()
-        }
-        cardViews.removeAll()
+        super.viewWillDisappear(animated)
+        clearDeck()
     }
     
     @IBAction func onNoCardsButtonPressed(_ sender: UIButton) {
@@ -91,6 +89,13 @@ extension FlashCardsViewController {
             cardViews[0].show()
         }
     }
+    
+    private func clearDeck() {
+        cardViews.forEach { card in
+            card.removeFromSuperview()
+        }
+        cardViews.removeAll()
+    }
 }
 
 extension FlashCardsViewController: FlashCardViewDelegate {
@@ -121,6 +126,9 @@ extension FlashCardsViewController: FlashCardViewDelegate {
     }
     
     private func removeCardFromDeck() {
+        if cardViews.isEmpty {  //this can happen when during swipe animation user decides to go to another screen - deck is cleared on viewWillDisappear and when animation is finished it's empty and there's range out of index exception
+            return
+        }
         cardViews[0].removeFromSuperview()
         cardViews.remove(at: 0)
         showNextCardOrReshuffleButtonOrNoCardsItems()
