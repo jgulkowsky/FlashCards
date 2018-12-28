@@ -18,6 +18,7 @@ class FlashCardsViewController: UIViewController {
 
     @IBOutlet weak var noCardsLabel: UILabel!
     @IBOutlet weak var noCardsButton: UIButton!
+    @IBOutlet weak var reshuffleButton: UIButton!
     
     var category: Category!
     
@@ -26,13 +27,10 @@ class FlashCardsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setBackButtonTitle()
-        setTitle()
         addAddButtonItem()
-        if !category.flashCards.isEmpty {
-            setNoCardsItemsVisibility(to: false)
-            addCards()
-        }
-        showNextCardReshuffleButtonOrNoCardsItems()
+        setTitle()
+        addCardsIfPossible()
+        showNextCardOrReshuffleButtonOrNoCardsItems()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,6 +42,11 @@ class FlashCardsViewController: UIViewController {
     
     @IBAction func onNoCardsButtonPressed(_ sender: UIButton) {
         FlashCardsRouter(controller: self, category: category).routeToSetFlashCard()
+    }
+    
+    @IBAction func onReshuffleButtonPressed(_ sender: UIButton) {
+        addCardsIfPossible()
+        showNextCardOrReshuffleButtonOrNoCardsItems()
     }
 }
 
@@ -66,7 +69,7 @@ extension FlashCardsViewController {
         noCardsButton.isHidden = !visibile
     }
     
-    private func addCards() {
+    private func addCardsIfPossible() {
         category.flashCards.forEach { flashCard in
             let flashCardView = FlashCardView()
             view.addSubview(flashCardView)
@@ -76,12 +79,14 @@ extension FlashCardsViewController {
         cardViews.shuffle()
     }
     
-    private func showNextCardReshuffleButtonOrNoCardsItems() {
+    private func showNextCardOrReshuffleButtonOrNoCardsItems() {
+        setNoCardsItemsVisibility(to: false)
+        reshuffleButton.isHidden = true
+        
         if category.flashCards.isEmpty {
             setNoCardsItemsVisibility(to: true)
         } else if self.cardViews.isEmpty {
-            print("Wanna reshuffle?")
-            //TODO: show reshuffle button
+            reshuffleButton.isHidden = false
         } else {
             cardViews[0].show()
         }
@@ -118,6 +123,6 @@ extension FlashCardsViewController: FlashCardViewDelegate {
     private func removeCardFromDeck() {
         cardViews[0].removeFromSuperview()
         cardViews.remove(at: 0)
-        showNextCardReshuffleButtonOrNoCardsItems()
+        showNextCardOrReshuffleButtonOrNoCardsItems()
     }
 }
