@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03759673C87FBD9615BD2F77 /* Pods_FlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B38452C8BDC5B3A825D25788 /* Pods_FlashCards.framework */; };
+		CE160D6D21D9495D00293E28 /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE160D6C21D9495D00293E28 /* GeneralConstants.swift */; };
 		CE46A88E21D4FC5D00F0B4CC /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46A88D21D4FC5D00F0B4CC /* AnimationConstants.swift */; };
 		CE78822721CE73F1002F8640 /* BackButtonTitleSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78822621CE73F1002F8640 /* BackButtonTitleSetter.swift */; };
 		CE78822A21CE7A47002F8640 /* SetFlashCardAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78822921CE7A47002F8640 /* SetFlashCardAnswerViewController.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		79FABBE0F55F6611105461D1 /* Pods-FlashCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCards.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards.release.xcconfig"; sourceTree = "<group>"; };
 		B38452C8BDC5B3A825D25788 /* Pods_FlashCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE160D6C21D9495D00293E28 /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
 		CE46A88D21D4FC5D00F0B4CC /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
 		CE78822621CE73F1002F8640 /* BackButtonTitleSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonTitleSetter.swift; sourceTree = "<group>"; };
 		CE78822921CE7A47002F8640 /* SetFlashCardAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardAnswerViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				CEF773B021CAACEE005D81A4 /* Set Flash Card Question */,
 				CE78822821CE7A1D002F8640 /* Set Flash Card Answer */,
 				CEF7736321C9584F005D81A4 /* AppDelegate.swift */,
+				CE160D6C21D9495D00293E28 /* GeneralConstants.swift */,
 				CE46A88D21D4FC5D00F0B4CC /* AnimationConstants.swift */,
 				CEF773B121CAAD64005D81A4 /* Names.swift */,
 				CEF7736721C9584F005D81A4 /* Main.storyboard */,
@@ -329,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF7737721C95AD3005D81A4 /* SetFlashCardQuestionViewController.swift in Sources */,
+				CE160D6D21D9495D00293E28 /* GeneralConstants.swift in Sources */,
 				CEF773C521CBDD15005D81A4 /* SetFlashCardAnswerWorker.swift in Sources */,
 				CEF773C921CBF5AD005D81A4 /* FlashCardView.swift in Sources */,
 				CEF773C721CBE022005D81A4 /* SetFlashCardQuestionRouter.swift in Sources */,

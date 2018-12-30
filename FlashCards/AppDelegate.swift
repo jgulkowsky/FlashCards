@@ -13,16 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        setNavigationBarColors()
+        setStatusBarColors()
+        return true
+    }
+    
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask
     {
         return .portrait
     }
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
-    }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -45,6 +47,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    private func setNavigationBarColors() {
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = .white
+        navigationBarAppearace.barTintColor = uicolorFromHex(GeneralConstants.HexColors.green)
+        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
+    
+    private func setStatusBarColors() {
+        //Find better way - there's some info: https://medium.com/@craiggrummitt/the-mysterious-case-of-the-status-bar-d9059a327c97
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+    }
 
+    private func uicolorFromHex(_ rgbValue: UInt32) -> UIColor {
+        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
+        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
+        let blue = CGFloat(rgbValue & 0xFF)/256.0
+        return UIColor(red:red, green:green, blue:blue, alpha:1.0)
+    }
 }
 
