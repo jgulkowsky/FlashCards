@@ -42,9 +42,10 @@ class FlashCardView: UIView {
     }
     
     private func initializeView() {
-        self.backgroundColor = UIColor.red
-        self.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: getExtraTopOffset() + 10, left: 10, bottom: 10, right: 10))
+        self.backgroundColor = .white
         self.layer.cornerRadius = 20
+        self.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: getExtraTopOffset() + 15, left: 15, bottom: 15, right: 15))
+        
     }
     
     private func initializeLabel() {
@@ -52,6 +53,9 @@ class FlashCardView: UIView {
         self.addSubview(label)
         label.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
         label.textAlignment = .center
+        label.font = label.font.withSize(20)
+        label.textColor = ColorHelper.uicolorFromHex(GeneralConstants.HexColors.green)
+        label.numberOfLines = 0
         updateLabel()
     }
     
