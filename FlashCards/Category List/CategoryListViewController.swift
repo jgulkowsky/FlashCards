@@ -29,7 +29,7 @@ class CategoryListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Names.categoryListCell, for: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Names.categoryListCell, for: indexPath)
         cell.textLabel?.text = categoryList?[indexPath.row].title
         return cell
     }

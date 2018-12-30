@@ -40,8 +40,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="lhP-w1-NLm" kind="show" id="Xd5-Mv-G72"/>
-                        <segue destination="rL5-5v-yAJ" kind="show" id="HEp-Cg-Zg3"/>
+                        <segue destination="lhP-w1-NLm" kind="show" identifier="toFlashCards" id="Xd5-Mv-G72"/>
+                        <segue destination="rL5-5v-yAJ" kind="show" identifier="toSetCategory" id="HEp-Cg-Zg3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYF-4J-cJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -119,7 +119,7 @@
                         <outlet property="noCardsButton" destination="haS-wK-Xrh" id="93i-ta-JK5"/>
                         <outlet property="noCardsLabel" destination="XI1-Sg-o9d" id="ZcH-rc-amk"/>
                         <outlet property="reshuffleButton" destination="cYg-7C-6vw" id="tKm-4b-bab"/>
-                        <segue destination="cE0-ab-ANm" kind="show" id="1hK-82-voi"/>
+                        <segue destination="cE0-ab-ANm" kind="show" identifier="toSetQuestion" id="1hK-82-voi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKJ-uC-Dwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -240,7 +240,7 @@
                     <connections>
                         <outlet property="textView" destination="cww-s0-O1P" id="p4v-Cx-j5O"/>
                         <outlet property="warning" destination="FU0-PB-mLi" id="j88-bu-vSa"/>
-                        <segue destination="TLX-tZ-5t1" kind="show" id="x8w-5q-agz"/>
+                        <segue destination="TLX-tZ-5t1" kind="show" identifier="toSetAnswer" id="x8w-5q-agz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDk-yL-765" userLabel="First Responder" sceneMemberID="firstResponder"/>

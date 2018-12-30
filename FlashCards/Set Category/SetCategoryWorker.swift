@@ -20,7 +20,7 @@ class SetCategoryWorker {
     func addCategory(withTitle title: String) {
         do {
             try realm.write {
-                var category = Category()
+                let category = Category()
                 category.title = title
                 realm.add(category)
             }
