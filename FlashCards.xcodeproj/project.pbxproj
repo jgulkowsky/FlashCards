@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		03759673C87FBD9615BD2F77 /* Pods_FlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B38452C8BDC5B3A825D25788 /* Pods_FlashCards.framework */; };
 		CE160D6D21D9495D00293E28 /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE160D6C21D9495D00293E28 /* GeneralConstants.swift */; };
+		CE160D7021D961D300293E28 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE160D6F21D961D300293E28 /* ColorHelper.swift */; };
 		CE46A88E21D4FC5D00F0B4CC /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46A88D21D4FC5D00F0B4CC /* AnimationConstants.swift */; };
 		CE78822721CE73F1002F8640 /* BackButtonTitleSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78822621CE73F1002F8640 /* BackButtonTitleSetter.swift */; };
 		CE78822A21CE7A47002F8640 /* SetFlashCardAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78822921CE7A47002F8640 /* SetFlashCardAnswerViewController.swift */; };
@@ -40,6 +41,7 @@
 		79FABBE0F55F6611105461D1 /* Pods-FlashCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCards.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards.release.xcconfig"; sourceTree = "<group>"; };
 		B38452C8BDC5B3A825D25788 /* Pods_FlashCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE160D6C21D9495D00293E28 /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
+		CE160D6F21D961D300293E28 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		CE46A88D21D4FC5D00F0B4CC /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
 		CE78822621CE73F1002F8640 /* BackButtonTitleSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonTitleSetter.swift; sourceTree = "<group>"; };
 		CE78822921CE7A47002F8640 /* SetFlashCardAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardAnswerViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE160D6E21D95CFD00293E28 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CE160D6C21D9495D00293E28 /* GeneralConstants.swift */,
+				CE46A88D21D4FC5D00F0B4CC /* AnimationConstants.swift */,
+				CEF773B121CAAD64005D81A4 /* Names.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		CE160D7121D961DF00293E28 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CE160D6F21D961D300293E28 /* ColorHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CE78822521CE73E2002F8640 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +158,8 @@
 		CEF7736221C9584F005D81A4 /* FlashCards */ = {
 			isa = PBXGroup;
 			children = (
+				CE160D6E21D95CFD00293E28 /* Constants */,
+				CE160D7121D961DF00293E28 /* Helpers */,
 				CE78822521CE73E2002F8640 /* Extensions */,
 				CEF773B521CAF1B1005D81A4 /* Data Model */,
 				CEF7737521C9585B005D81A4 /* Category List */,
@@ -146,9 +168,6 @@
 				CEF773B021CAACEE005D81A4 /* Set Flash Card Question */,
 				CE78822821CE7A1D002F8640 /* Set Flash Card Answer */,
 				CEF7736321C9584F005D81A4 /* AppDelegate.swift */,
-				CE160D6C21D9495D00293E28 /* GeneralConstants.swift */,
-				CE46A88D21D4FC5D00F0B4CC /* AnimationConstants.swift */,
-				CEF773B121CAAD64005D81A4 /* Names.swift */,
 				CEF7736721C9584F005D81A4 /* Main.storyboard */,
 				CEF7736C21C95850005D81A4 /* LaunchScreen.storyboard */,
 				CEF7736A21C95850005D81A4 /* Assets.xcassets */,
@@ -350,6 +369,7 @@
 				CEF7737B21C95AF7005D81A4 /* FlashCardsViewController.swift in Sources */,
 				CE78822C21CE7B95002F8640 /* SetFlashCardAnswerRouter.swift in Sources */,
 				CEF773B721CAF1F0005D81A4 /* Category.swift in Sources */,
+				CE160D7021D961D300293E28 /* ColorHelper.swift in Sources */,
 				CEF7737921C95AEA005D81A4 /* SetCategoryViewController.swift in Sources */,
 				CEF773CF21CC1FA4005D81A4 /* FlashCardsWorker.swift in Sources */,
 				CEF7737F21C960D3005D81A4 /* CategoryListWorker.swift in Sources */,

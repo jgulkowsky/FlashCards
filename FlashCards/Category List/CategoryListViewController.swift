@@ -45,13 +45,13 @@ class CategoryListViewController: UITableViewController {
             CategoryListWorker().deleteCategory(self.categoryList![index.row])
             tableView.reloadData()
         }
-        delete.backgroundColor = .red
+        delete.backgroundColor = ColorHelper.uicolorFromHex(GeneralConstants.HexColors.red)
         
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
             CategoryListRouter(controller: self, category: self.categoryList![index.row])
                 .routeToSetCategory()
         }
-        edit.backgroundColor = .blue
+        edit.backgroundColor = ColorHelper.uicolorFromHex(GeneralConstants.HexColors.blue)
         
         return [delete, edit]
     }
