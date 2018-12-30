@@ -92,12 +92,13 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYg-7C-6vw" userLabel="Reshuffle Button">
-                                <rect key="frame" x="140" y="318.5" width="95" height="30"/>
+                                <rect key="frame" x="157.5" y="303.5" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="Lth-Wo-63p"/>
-                                    <constraint firstAttribute="height" constant="30" id="ef1-Iw-eg1"/>
+                                    <constraint firstAttribute="width" constant="60" id="HO0-TY-KEp"/>
+                                    <constraint firstAttribute="height" constant="60" id="d29-9Z-bHA"/>
                                 </constraints>
-                                <state key="normal" title="Reshuffle"/>
+                                <color key="tintColor" white="0.55000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="RefreshIcon"/>
                                 <connections>
                                     <action selector="onReshuffleButtonPressed:" destination="lhP-w1-NLm" eventType="touchUpInside" id="Yfg-As-kqQ"/>
                                 </connections>
@@ -105,12 +106,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="cYg-7C-6vw" firstAttribute="centerY" secondItem="UfD-wf-LtM" secondAttribute="centerY" id="0m6-rj-ZEW"/>
                             <constraint firstItem="ek8-MN-CRe" firstAttribute="centerY" secondItem="UfD-wf-LtM" secondAttribute="centerY" id="AQ3-N0-Kqf"/>
-                            <constraint firstItem="cYg-7C-6vw" firstAttribute="centerX" secondItem="UfD-wf-LtM" secondAttribute="centerX" id="NMJ-NO-3Qf"/>
+                            <constraint firstItem="cYg-7C-6vw" firstAttribute="centerY" secondItem="UfD-wf-LtM" secondAttribute="centerY" id="Cbj-7f-wea"/>
                             <constraint firstItem="haS-wK-Xrh" firstAttribute="leading" secondItem="UfD-wf-LtM" secondAttribute="leading" constant="79.5" id="QFG-D7-itc"/>
                             <constraint firstItem="ek8-MN-CRe" firstAttribute="centerX" secondItem="UfD-wf-LtM" secondAttribute="centerX" id="Z44-cE-dB2"/>
                             <constraint firstAttribute="trailing" secondItem="haS-wK-Xrh" secondAttribute="trailing" constant="79.5" id="ZAw-60-JPW"/>
+                            <constraint firstItem="cYg-7C-6vw" firstAttribute="centerX" secondItem="UfD-wf-LtM" secondAttribute="centerX" id="yQb-93-afF"/>
                             <constraint firstItem="haS-wK-Xrh" firstAttribute="top" secondItem="XI1-Sg-o9d" secondAttribute="bottom" constant="12" id="zDW-xD-nMR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xAh-cL-h7X"/>
@@ -326,4 +327,7 @@
             <point key="canvasLocation" x="113" y="-25"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="RefreshIcon" width="250" height="250"/>
+    </resources>
 </document>
