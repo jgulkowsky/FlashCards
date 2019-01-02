@@ -28,7 +28,4 @@ struct Names {
     static let flashCardsAlertEditTitle = "Edit"
     static let flashCardsAlertDeleteTitle = "Delete"
     static let flashCardsAlertCancelTitle = "Cancel"
-    
-    static let setFlashCardQuestionPlaceholder = "Add question"
-    static let setFlashCardAnswerPlaceholder = "Add answer"
 }

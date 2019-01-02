@@ -24,19 +24,19 @@ class SetFlashCardQuestionViewController: UIViewController {
         title = Names.setFlashCardQuestionNavigationTitle
         
         myTextView.initialize(with: self)
-        myTextView.setPlaceholderMode(with: Names.setFlashCardQuestionPlaceholder)
         if let flashCard = flashCard {
-            myTextView.setTextMode(with: flashCard.question)
+            myTextView.text = flashCard.question
         }
         
         warning.isHidden = true
+        
+        myTextView.becomeFirstResponder()
     }
     
     @IBAction func onButtonPressed(_ sender: UIButton) {
-        view.endEditing(true)
         let question = myTextView.text
         let worker = SetFlashCardQuestionWorker()
-        if worker.isValid(question) && !myTextView.isInPlaceholderMode {
+        if worker.isValid(question) {
             warning.isHidden = true
             SetFlashCardQuestionRouter(controller: self, flashCardsVC: flashCardsVC, question: question!, category: self.category, flashCard: flashCard).routeToSetFlashCardAnswer()
         } else {
@@ -47,16 +47,9 @@ class SetFlashCardQuestionViewController: UIViewController {
 
 extension SetFlashCardQuestionViewController: UITextViewDelegate {
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if myTextView.isInPlaceholderMode {
-            myTextView.setTextMode()
-        }
-        warning.isHidden = true
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if myTextView.text.isEmpty {
-            myTextView.setPlaceholderMode(with: Names.setFlashCardQuestionPlaceholder)
+    func textViewDidChange(_ textView: UITextView) {
+        if !textView.text.isEmpty {
+             warning.isHidden = true
         }
     }
 }

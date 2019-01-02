@@ -25,19 +25,20 @@ class SetFlashCardAnswerViewController: UIViewController {
         title = Names.setFlashCardAnswerNavigationTitle
         
         myTextView.initialize(with: self)
-        myTextView.setPlaceholderMode(with: Names.setFlashCardAnswerPlaceholder)
         if let flashCard = flashCard {
-            myTextView.setTextMode(with: flashCard.answer)
+            myTextView.text = flashCard.answer
         }
         
         warning.isHidden = true
+        
+        myTextView.becomeFirstResponder()
     }
     
     @IBAction func onButtonPressed(_ sender: UIButton) {
         view.endEditing(true)
         let answer = myTextView.text
         let worker = SetFlashCardAnswerWorker()
-        if worker.isValid(answer) && !myTextView.isInPlaceholderMode {
+        if worker.isValid(answer) {
             warning.isHidden = true
             if let flashCard = flashCard {
                 SetFlashCardAnswerWorker().updateFlashCard(flashCard, withQuestion: question, withAnswer: answer!)
@@ -53,16 +54,9 @@ class SetFlashCardAnswerViewController: UIViewController {
 
 extension SetFlashCardAnswerViewController: UITextViewDelegate {
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if myTextView.isInPlaceholderMode {
-            myTextView.setTextMode()
-        }
-        warning.isHidden = true
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if myTextView.text.isEmpty {
-            myTextView.setPlaceholderMode(with: Names.setFlashCardAnswerPlaceholder)
+    func textViewDidChange(_ textView: UITextView) {
+        if !textView.text.isEmpty {
+            warning.isHidden = true
         }
     }
 }
