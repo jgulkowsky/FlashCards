@@ -150,22 +150,29 @@
                                     <constraint firstAttribute="height" constant="21" id="dvg-01-D5S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.52549019607843139" green="0.16470588235294117" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGr-op-Z7j">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGr-op-Z7j" customClass="RoundedCornersButton" customModule="FlashCards" customModuleProvider="target">
                                 <rect key="frame" x="127.5" y="219" width="120" height="46"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.38823529410000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="Cvd-ta-o4x"/>
                                     <constraint firstAttribute="width" constant="120" id="vPh-SQ-W6h"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Save"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onButtonPressed:" destination="rL5-5v-yAJ" eventType="touchUpInside" id="LF8-Zb-IHL"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gzL-Wa-OJN" firstAttribute="leading" secondItem="spQ-Cy-XIm" secondAttribute="leading" constant="65" id="HKm-iw-lSM"/>
                             <constraint firstItem="gzL-Wa-OJN" firstAttribute="top" secondItem="spQ-Cy-XIm" secondAttribute="top" constant="80" id="Y5K-No-Epa"/>
@@ -195,7 +202,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add question" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cww-s0-O1P">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add question" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cww-s0-O1P" customClass="MyTextView" customModule="FlashCards" customModuleProvider="target">
                                 <rect key="frame" x="65" y="144" width="245" height="125"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -203,6 +210,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text is not valid!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-PB-mLi">
                                 <rect key="frame" x="65" y="281" width="245" height="21"/>
@@ -210,22 +222,30 @@
                                     <constraint firstAttribute="height" constant="21" id="cN3-9k-ihu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.52549019610000003" green="0.1647058824" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xuq-wF-E7l">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xuq-wF-E7l" customClass="RoundedCornersButton" customModule="FlashCards" customModuleProvider="target">
                                 <rect key="frame" x="127.5" y="314" width="120" height="46"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.38823529410000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="07n-lk-qjs"/>
                                     <constraint firstAttribute="height" constant="46" id="bcs-3h-h94"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onButtonPressed:" destination="cE0-ab-ANm" eventType="touchUpInside" id="e3s-87-abc"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Xuq-wF-E7l" firstAttribute="top" secondItem="FU0-PB-mLi" secondAttribute="bottom" constant="12" id="Gyz-il-Qmt"/>
                             <constraint firstItem="FU0-PB-mLi" firstAttribute="top" secondItem="cww-s0-O1P" secondAttribute="bottom" constant="12" id="Mce-Xs-Dad"/>
@@ -239,7 +259,7 @@
                         <viewLayoutGuide key="safeArea" id="QXW-IF-XH5"/>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="cww-s0-O1P" id="p4v-Cx-j5O"/>
+                        <outlet property="myTextView" destination="cww-s0-O1P" id="p4v-Cx-j5O"/>
                         <outlet property="warning" destination="FU0-PB-mLi" id="j88-bu-vSa"/>
                         <segue destination="TLX-tZ-5t1" kind="show" identifier="toSetAnswer" id="x8w-5q-agz"/>
                     </connections>
@@ -256,7 +276,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add answer" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="guW-sy-wqB">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add answer" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="guW-sy-wqB" customClass="MyTextView" customModule="FlashCards" customModuleProvider="target">
                                 <rect key="frame" x="65" y="144" width="245" height="125"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -264,6 +284,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text is not valid!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miv-n6-g8Y">
                                 <rect key="frame" x="65" y="281" width="245" height="21"/>
@@ -271,22 +296,30 @@
                                     <constraint firstAttribute="height" constant="21" id="wmy-OT-xwU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.52549019610000003" green="0.1647058824" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kuf-f4-MjC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kuf-f4-MjC" customClass="RoundedCornersButton" customModule="FlashCards" customModuleProvider="target">
                                 <rect key="frame" x="127.5" y="314" width="120" height="46"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.38823529410000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="h0y-IC-5mu"/>
                                     <constraint firstAttribute="width" constant="120" id="zDC-Aw-rhy"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onButtonPressed:" destination="TLX-tZ-5t1" eventType="touchUpInside" id="aNF-pz-fp3"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="guW-sy-wqB" firstAttribute="top" secondItem="gAi-Yj-JuP" secondAttribute="top" constant="80" id="A9M-ug-2j5"/>
                             <constraint firstItem="miv-n6-g8Y" firstAttribute="top" secondItem="guW-sy-wqB" secondAttribute="bottom" constant="12" id="G2z-V0-E7N"/>
@@ -300,7 +333,7 @@
                         <viewLayoutGuide key="safeArea" id="gAi-Yj-JuP"/>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="guW-sy-wqB" id="LS0-bE-TXi"/>
+                        <outlet property="myTextView" destination="guW-sy-wqB" id="LS0-bE-TXi"/>
                         <outlet property="warning" destination="miv-n6-g8Y" id="aq8-Yu-HgV"/>
                     </connections>
                 </viewController>
