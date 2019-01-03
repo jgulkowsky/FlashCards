@@ -26,6 +26,9 @@ struct Names {
     static let setFlashCardAnswerNavigationTitle = "Set Answer"
     static let backButtonText = "Back"
     
+    static let categoryListCellEditTitle = "Edit"
+    static let categoryListCellDeleteTitle = "Delete"
+    
     static let flashCardsAlertTitle = "What to do?"
     static let flashCardsAlertEditTitle = "Edit"
     static let flashCardsAlertDeleteTitle = "Delete"

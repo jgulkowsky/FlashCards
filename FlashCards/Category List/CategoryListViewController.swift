@@ -35,13 +35,13 @@ class CategoryListViewController: UITableViewController, Delegate {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         
-        let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
+        let delete = UITableViewRowAction(style: .normal, title: Names.categoryListCellDeleteTitle) { action, index in
             CategoryListWorker().deleteCategory(self.categoryList![index.row])
             tableView.reloadData()
         }
         delete.backgroundColor = ColorHelper.uicolorFromHex(GeneralConstants.HexColors.red)
         
-        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
+        let edit = UITableViewRowAction(style: .normal, title: Names.categoryListCellEditTitle) { action, index in
             self.categoryToSend = self.categoryList![index.row]
             CategoryListRouter.routeToSetCategory(from: self)
         }
