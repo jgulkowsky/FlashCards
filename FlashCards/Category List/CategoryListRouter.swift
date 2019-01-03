@@ -10,27 +10,22 @@ import UIKit
 
 class CategoryListRouter {
     
-    private weak var controller: UIViewController!
-    private var category: Category?
-    
-    init(controller: UIViewController, category: Category? = nil) {
-        self.controller = controller
-        self.category = category
+    static func routeToSetCategory(from controller: CategoryListViewController) {
+        controller.performSegue(withIdentifier: Names.setCategorySegue, sender: controller)
     }
     
-    func routeToSetCategory() {
-        let vc = instantiateVC(withId: Names.setCategoryViewController) as! SetCategoryViewController
+    static func sendParamsToSetCategory(_ delegate: Delegate, _ segue: UIStoryboardSegue, _ category: Category?) {
+        if segue.identifier == Names.setCategorySegue  {
+            if let destination = segue.destination as? SetCategoryViewController {
+                destination.category = category
+                destination.delegate = delegate
+            }
+        }
+    }
+    
+    static func routeToFlashCards(from controller: CategoryListViewController, _ category: Category?) {
+        let vc = UIStoryboard.init(name: Names.storyBoard, bundle: Bundle.main).instantiateViewController(withIdentifier: Names.flashCardsViewController) as! FlashCardsViewController
         vc.category = category
         controller.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func routeToFlashCards() {
-        let vc = instantiateVC(withId: Names.flashCardsViewController) as! FlashCardsViewController
-        vc.category = category
-        controller.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    private func instantiateVC(withId id: String) -> UIViewController {
-        return UIStoryboard.init(name: Names.storyBoard, bundle: Bundle.main).instantiateViewController(withIdentifier: id)
     }
 }

@@ -19,6 +19,8 @@ struct Names {
     static let setFlashCardQuestionViewController = "SetFlashCardQuestionViewController"
     static let setFlashCardAnswerViewController = "SetFlashCardAnswerViewController"
     
+    static let setCategorySegue = "toSetCategory"
+    
     static let setCategoryNavigationTitle = "Set Category Title"
     static let setFlashCardQuestionNavigationTitle = "Set Question"
     static let setFlashCardAnswerNavigationTitle = "Set Answer"

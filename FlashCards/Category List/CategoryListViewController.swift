@@ -9,19 +9,14 @@
 import UIKit
 import RealmSwift
 
-class CategoryListViewController: UITableViewController {
+class CategoryListViewController: UITableViewController, Delegate {
     
     private var categoryList: Results<Category>?
+    private var categoryToSend: Category?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setBackButtonTitle()
-        categoryList = CategoryListWorker().getCategoryList()
-        tableView.reloadData()
-    }
-    
-    @IBAction func onAddButtonPressed(_ sender: UIBarButtonItem) {
-        CategoryListRouter(controller: self).routeToSetCategory()
+        onInit()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,8 +30,7 @@ class CategoryListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        CategoryListRouter(controller: self, category: categoryList![indexPath.row])
-            .routeToFlashCards()
+        CategoryListRouter.routeToFlashCards(from: self, categoryList![indexPath.row])
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
@@ -48,11 +42,30 @@ class CategoryListViewController: UITableViewController {
         delete.backgroundColor = ColorHelper.uicolorFromHex(GeneralConstants.HexColors.red)
         
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
-            CategoryListRouter(controller: self, category: self.categoryList![index.row])
-                .routeToSetCategory()
+            self.categoryToSend = self.categoryList![index.row]
+            CategoryListRouter.routeToSetCategory(from: self)
         }
         edit.backgroundColor = ColorHelper.uicolorFromHex(GeneralConstants.HexColors.blue)
         
         return [delete, edit]
+    }
+    
+    @IBAction func onAddButtonPressed(_ sender: UIBarButtonItem) {
+        CategoryListRouter.routeToSetCategory(from: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        CategoryListRouter.sendParamsToSetCategory(self, segue, categoryToSend)
+    }
+    
+    func notify() {
+        onInit()
+    }
+    
+    private func onInit() {
+        categoryToSend = nil
+        setBackButtonTitle()
+        categoryList = CategoryListWorker().getCategoryList()
+        tableView.reloadData()
     }
 }
