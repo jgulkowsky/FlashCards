@@ -28,10 +28,9 @@ class SetFlashCardAnswerViewController: UIViewController {
         if let flashCard = flashCard {
             myTextView.text = flashCard.answer
         }
+        myTextView.becomeFirstResponder()
         
         warning.isHidden = true
-        
-        myTextView.becomeFirstResponder()
     }
     
     @IBAction func onButtonPressed(_ sender: UIButton) {

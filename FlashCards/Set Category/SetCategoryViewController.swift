@@ -24,6 +24,7 @@ class SetCategoryViewController: UIViewController {
         if let category = category {
             textField.text = category.title
         }
+        textField.becomeFirstResponder()
         
         warning.isHidden = true
     }
