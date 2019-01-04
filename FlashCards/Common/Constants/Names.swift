@@ -18,7 +18,8 @@ struct Names {
     static let setCategorySegue = "toSetCategory"
     static let setFlashCardSegue = "toSetFlashCard"
     
-    static let backButtonText = "Back"
+    static let backButtonTextBack = "Back"
+    static let backButtonTextNone = "    "
     
     static let categoryListCellEditTitle = "Edit"
     static let categoryListCellDeleteTitle = "Delete"

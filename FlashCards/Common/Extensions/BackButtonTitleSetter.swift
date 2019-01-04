@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     
-    func setBackButtonTitle(_ title: String = Names.backButtonText) {
+    func setBackButtonTitle(_ title: String = Names.backButtonTextNone) {
         let backItem = UIBarButtonItem()
         backItem.title = title
         navigationItem.backBarButtonItem = backItem
