@@ -94,6 +94,7 @@ extension FlashCardsViewController {
             setNoCardsItemsVisibility(to: true)
         } else if self.cardViews.isEmpty {
             reshuffleButton.isHidden = false
+            reshuffleButton.isUserInteractionEnabled = true
         } else {
             cardViews[0].show()
             if cardViews.count == 1 {
