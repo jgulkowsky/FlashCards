@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Delegate {
-    func notify()
+    func notify(with params: Any?)
 }

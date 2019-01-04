@@ -153,7 +153,30 @@ extension FlashCardsViewController: FlashCardViewDelegate {
 
 extension FlashCardsViewController: Delegate {
     
-    func notify() {
+    func notify(with params: Any?) {
+        if let params = params as? (question: String, answer: String) {
+            guard let flashCard = (category.flashCards.first { card -> Bool in
+                return card.question == params.question && card.answer == params.answer
+            }) else {
+                fatalError("Cannot get flashCard i DB from SetFlashCardVC response!")
+            }
+            
+            if !cardViews.isEmpty {
+                if let flashCardToSend = flashCardToSend {
+                    cardViews[0].removeFromSuperview()
+                    cardViews.remove(at: 0)
+                } else {
+                    cardViews[0].hide()
+                }
+            }
+            
+            let flashCardView = FlashCardView()
+            view.addSubview(flashCardView)
+            flashCardView.initialize(with: flashCard, self, self)
+            cardViews.insert(flashCardView, at: 0)
+            cardViews[0].show()
+        }
+        
         flashCardToSend = nil
     }
 }

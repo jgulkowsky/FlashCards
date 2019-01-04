@@ -58,7 +58,7 @@ class CategoryListViewController: UITableViewController, Delegate {
         CategoryListRouter.sendParamsToSetCategory(self, segue, categoryToSend)
     }
     
-    func notify() {
+    func notify(with params: Any?) {
         onInit()
     }
     

@@ -52,11 +52,13 @@ class SetFlashCardViewController: UIViewController {
                 SetFlashCardWorker().addFlashCard(toCategory: category, withQuestion: question, withAnswer: answer)
             }
             goBack()
+            delegate.notify(with: (question: question, answer: answer))
         }
     }
     
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
         goBack()
+        delegate.notify(with: nil)
     }
     
     private func setContentView() {
@@ -85,7 +87,6 @@ class SetFlashCardViewController: UIViewController {
     private func goBack() {
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
-        delegate.notify()
     }
 }
 

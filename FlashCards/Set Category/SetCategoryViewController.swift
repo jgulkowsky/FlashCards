@@ -54,6 +54,6 @@ class SetCategoryViewController: UIViewController {
     private func goBack() {
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
-        delegate.notify()
+        delegate.notify(with: nil)
     }
 }
