@@ -26,6 +26,10 @@ class SetFlashCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let flashCard = flashCard {
+            question = flashCard.question
+            answer = flashCard.answer
+        }
         setContentView()
         setMyTextView()
         warning.isHidden = true
@@ -62,9 +66,7 @@ class SetFlashCardViewController: UIViewController {
     
     private func setMyTextView() {
         myTextView.initialize(with: self)
-        if let flashCard = flashCard {
-            myTextView.text = flashCard.question
-        }
+        myTextView.text = question
         myTextView.becomeFirstResponder()
     }
     
