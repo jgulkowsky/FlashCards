@@ -55,29 +55,10 @@
                     <view key="view" contentMode="scaleToFill" id="UfD-wf-LtM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYg-7C-6vw" userLabel="Reshuffle Button">
-                                <rect key="frame" x="157.5" y="303.5" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="HO0-TY-KEp"/>
-                                    <constraint firstAttribute="height" constant="60" id="d29-9Z-bHA"/>
-                                </constraints>
-                                <color key="tintColor" white="0.55000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="RefreshIcon"/>
-                                <connections>
-                                    <action selector="onReshuffleButtonPressed:" destination="lhP-w1-NLm" eventType="touchUpInside" id="Yfg-As-kqQ"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="cYg-7C-6vw" firstAttribute="centerY" secondItem="UfD-wf-LtM" secondAttribute="centerY" id="Cbj-7f-wea"/>
-                            <constraint firstItem="cYg-7C-6vw" firstAttribute="centerX" secondItem="UfD-wf-LtM" secondAttribute="centerX" id="yQb-93-afF"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xAh-cL-h7X"/>
                     </view>
                     <connections>
-                        <outlet property="reshuffleButton" destination="cYg-7C-6vw" id="tKm-4b-bab"/>
                         <segue destination="cE0-ab-ANm" kind="presentation" identifier="toSetFlashCard" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="1hK-82-voi"/>
                     </connections>
                 </viewController>
@@ -331,7 +312,4 @@
             <point key="canvasLocation" x="113" y="-25"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="RefreshIcon" width="250" height="250"/>
-    </resources>
 </document>

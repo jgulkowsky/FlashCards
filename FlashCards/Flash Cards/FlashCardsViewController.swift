@@ -15,8 +15,6 @@ protocol FlashCardViewDelegate {
 }
 
 class FlashCardsViewController: UIViewController {
-
-    @IBOutlet weak var reshuffleButton: UIButton!
     
     var category: Category!
     
@@ -33,15 +31,6 @@ class FlashCardsViewController: UIViewController {
         clearDeck()
     }
     
-    @IBAction func onNoCardsButtonPressed(_ sender: UIButton) {
-        FlashCardsRouter.routeToSetFlashCard(from: self)
-    }
-    
-    @IBAction func onReshuffleButtonPressed(_ sender: UIButton) {
-        addCardsIfPossible()
-        showNextCardOrReshuffleButton()
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         FlashCardsRouter.sendParamsToSetFlashCard(self, segue, category, flashCardToSend)
     }
@@ -51,22 +40,30 @@ extension FlashCardsViewController {
     
     private func onInit() {
         flashCardToSend = nil
-        addAddButtonItem()
+        addRightBarButtonItems()
         setTitle()
         addCardsIfPossible()
-        showNextCardOrReshuffleButton()
+        showNextCardIfPossible()
     }
     
     private func setTitle() {
         title = category.title
     }
     
-    private func addAddButtonItem() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddButtonPressed))
+    private func addRightBarButtonItems() {
+        let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddCard))
+        let reshuffleButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(onReshuffleDeck))
+        navigationItem.rightBarButtonItems = [addButtonItem, reshuffleButtonItem]
     }
     
-    @objc private func onAddButtonPressed() {
+    @objc private func onAddCard() {
         FlashCardsRouter.routeToSetFlashCard(from: self)
+    }
+    
+    @objc private func onReshuffleDeck() {
+        clearDeck()
+        addCardsIfPossible()
+        showNextCardIfPossible()
     }
     
     private func addCardsIfPossible() {
@@ -79,22 +76,9 @@ extension FlashCardsViewController {
         cardViews.shuffle()
     }
     
-    private func showNextCardOrReshuffleButton() {
-        reshuffleButton.isHidden = true
-        
-        if category.flashCards.isEmpty {
-            return
-        }
-        
-        if self.cardViews.isEmpty {
-            reshuffleButton.isHidden = false
-            reshuffleButton.isUserInteractionEnabled = true
-        } else {
+    private func showNextCardIfPossible() {
+        if !self.cardViews.isEmpty {
             cardViews[0].show()
-            if cardViews.count == 1 {
-                reshuffleButton.isHidden = false
-                reshuffleButton.isUserInteractionEnabled = false
-            }
         }
     }
     
@@ -113,7 +97,6 @@ extension FlashCardsViewController: FlashCardViewDelegate {
     }
     
     func onFlashCardViewRemoved() {
-        reshuffleButton.isUserInteractionEnabled = true
         removeCardFromDeck()
     }
     
@@ -141,7 +124,7 @@ extension FlashCardsViewController: FlashCardViewDelegate {
         }
         cardViews[0].removeFromSuperview()
         cardViews.remove(at: 0)
-        showNextCardOrReshuffleButton()
+        showNextCardIfPossible()
     }
 }
 
