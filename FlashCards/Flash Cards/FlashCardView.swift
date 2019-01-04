@@ -45,7 +45,6 @@ class FlashCardView: UIView {
         self.backgroundColor = .white
         self.layer.cornerRadius = 20
         self.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: getExtraTopOffset() + 15, left: 15, bottom: 15, right: 15))
-        
     }
     
     private func initializeLabel() {

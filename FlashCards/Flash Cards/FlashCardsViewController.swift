@@ -87,6 +87,10 @@ extension FlashCardsViewController {
             reshuffleButton.isHidden = false
         } else {
             cardViews[0].show()
+            if cardViews.count == 1 {
+                reshuffleButton.isHidden = false
+                reshuffleButton.isUserInteractionEnabled = false
+            }
         }
     }
     
@@ -105,6 +109,7 @@ extension FlashCardsViewController: FlashCardViewDelegate {
     }
     
     func onFlashCardViewRemoved() {
+        reshuffleButton.isUserInteractionEnabled = true
         removeCardFromDeck()
     }
     
