@@ -10,16 +10,21 @@ import UIKit
 
 class SetFlashCardQuestionViewController: UIViewController {
 
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var myTextView: MyTextView!
     @IBOutlet weak var warning: UILabel!
     
     weak var flashCardsVC: UIViewController!
+    var delegate: Delegate!
     var category: Category!
     var flashCard: FlashCard?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButtonTitle()
+        
+        contentView.layer.cornerRadius = 10
+        contentView.layer.masksToBounds = true
         
         title = Names.setFlashCardQuestionNavigationTitle
         
@@ -41,6 +46,16 @@ class SetFlashCardQuestionViewController: UIViewController {
         } else {
             warning.isHidden = false
         }
+    }
+    
+    @IBAction func onTap(_ sender: UITapGestureRecognizer) {
+        goBack()
+    }
+    
+    private func goBack() {
+        view.endEditing(true)
+        dismiss(animated: true, completion: nil)
+        delegate.notify()
     }
 }
 

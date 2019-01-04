@@ -23,14 +23,11 @@ class FlashCardsViewController: UIViewController {
     var category: Category!
     
     private var cardViews = [FlashCardView]()
+    private var flashCardToSend: FlashCard? = nil
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setBackButtonTitle()
-        addAddButtonItem()
-        setTitle()
-        addCardsIfPossible()
-        showNextCardOrReshuffleButtonOrNoCardsItems()
+        onInit()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -39,16 +36,28 @@ class FlashCardsViewController: UIViewController {
     }
     
     @IBAction func onNoCardsButtonPressed(_ sender: UIButton) {
-        FlashCardsRouter(controller: self, category: category).routeToSetFlashCard()
+        FlashCardsRouter.routeToSetFlashCardQuestion(from: self)
     }
     
     @IBAction func onReshuffleButtonPressed(_ sender: UIButton) {
         addCardsIfPossible()
         showNextCardOrReshuffleButtonOrNoCardsItems()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        FlashCardsRouter.sendParamsToSetFlashCardQuestion(self, self, segue, category, flashCardToSend)
+    }
 }
 
 extension FlashCardsViewController {
+    
+    private func onInit() {
+        flashCardToSend = nil
+        addAddButtonItem()
+        setTitle()
+        addCardsIfPossible()
+        showNextCardOrReshuffleButtonOrNoCardsItems()
+    }
     
     private func setTitle() {
         title = category.title
@@ -59,7 +68,7 @@ extension FlashCardsViewController {
     }
     
     @objc private func onAddButtonPressed() {
-        FlashCardsRouter(controller: self, category: category).routeToSetFlashCard()
+        FlashCardsRouter.routeToSetFlashCardQuestion(from: self)
     }
     
     private func setNoCardsItemsVisibility(to visibile: Bool) {
@@ -117,7 +126,8 @@ extension FlashCardsViewController: FlashCardViewDelegate {
         let alert = UIAlertController(title: Names.flashCardsAlertTitle, message: nil, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: Names.flashCardsAlertEditTitle, style: .default) { action in
-            FlashCardsRouter(controller: self, category: self.category, flashCard: flashCard).routeToSetFlashCard()
+            self.flashCardToSend = flashCard
+            FlashCardsRouter.routeToSetFlashCardQuestion(from: self)
         })
         
         alert.addAction(UIAlertAction(title: Names.flashCardsAlertDeleteTitle, style: .destructive) { action in
@@ -137,5 +147,12 @@ extension FlashCardsViewController: FlashCardViewDelegate {
         cardViews[0].removeFromSuperview()
         cardViews.remove(at: 0)
         showNextCardOrReshuffleButtonOrNoCardsItems()
+    }
+}
+
+extension FlashCardsViewController: Delegate {
+    
+    func notify() {
+        onInit()
     }
 }

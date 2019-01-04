@@ -120,7 +120,7 @@
                         <outlet property="noCardsButton" destination="haS-wK-Xrh" id="93i-ta-JK5"/>
                         <outlet property="noCardsLabel" destination="XI1-Sg-o9d" id="ZcH-rc-amk"/>
                         <outlet property="reshuffleButton" destination="cYg-7C-6vw" id="tKm-4b-bab"/>
-                        <segue destination="cE0-ab-ANm" kind="show" identifier="toSetQuestion" id="1hK-82-voi"/>
+                        <segue destination="cE0-ab-ANm" kind="presentation" identifier="toSetQuestion" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="1hK-82-voi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKJ-uC-Dwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -244,69 +244,112 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cww-s0-O1P" customClass="MyTextView" customModule="FlashCards" customModuleProvider="target">
-                                <rect key="frame" x="65" y="144" width="245" height="125"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0Y-kR-dhc" userLabel="Content">
+                                <rect key="frame" x="67.5" y="103.5" width="240" height="260"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xuq-wF-E7l">
+                                        <rect key="frame" x="0.0" y="214" width="240" height="46"/>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.38823529410000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="Bgx-bf-w56"/>
+                                        </constraints>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onButtonPressed:" destination="cE0-ab-ANm" eventType="touchUpInside" id="e3s-87-abc"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cww-s0-O1P" customClass="MyTextView" customModule="FlashCards" customModuleProvider="target">
+                                        <rect key="frame" x="21" y="66" width="198" height="90"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="Psk-Ra-WWQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28l-YG-ZRN">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="46"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35d-AY-ccR">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="46"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.098039215690000001" green="0.38431372549999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="35d-AY-ccR" firstAttribute="leading" secondItem="28l-YG-ZRN" secondAttribute="leading" id="5YH-zO-e5e"/>
+                                            <constraint firstAttribute="trailing" secondItem="35d-AY-ccR" secondAttribute="trailing" id="PSS-LS-Y70"/>
+                                            <constraint firstItem="35d-AY-ccR" firstAttribute="top" secondItem="28l-YG-ZRN" secondAttribute="top" id="aHa-qK-xg5"/>
+                                            <constraint firstAttribute="bottom" secondItem="35d-AY-ccR" secondAttribute="bottom" id="iBl-iz-hee"/>
+                                            <constraint firstAttribute="height" constant="46" id="yEE-kH-w40"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text is not valid!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-PB-mLi">
+                                        <rect key="frame" x="0.0" y="156" width="240" height="58"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.52549019610000003" green="0.1647058824" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="0ms-IS-QQm"/>
+                                    <constraint firstAttribute="width" constant="240" id="9dZ-Jo-qsE"/>
+                                    <constraint firstItem="cww-s0-O1P" firstAttribute="top" secondItem="28l-YG-ZRN" secondAttribute="bottom" constant="20" id="Bcs-oR-SvZ"/>
+                                    <constraint firstItem="cww-s0-O1P" firstAttribute="leading" secondItem="p0Y-kR-dhc" secondAttribute="leading" constant="21" id="FkS-4C-Vx3"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xuq-wF-E7l" secondAttribute="bottom" id="Fmk-9i-ZGj"/>
+                                    <constraint firstAttribute="trailing" secondItem="FU0-PB-mLi" secondAttribute="trailing" id="Gmu-sY-na1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xuq-wF-E7l" secondAttribute="trailing" id="KgS-hO-Y4n"/>
+                                    <constraint firstItem="FU0-PB-mLi" firstAttribute="top" secondItem="cww-s0-O1P" secondAttribute="bottom" id="LFH-Kk-bIM"/>
+                                    <constraint firstAttribute="trailing" secondItem="cww-s0-O1P" secondAttribute="trailing" constant="21" id="MHR-r0-R93"/>
+                                    <constraint firstItem="28l-YG-ZRN" firstAttribute="top" secondItem="p0Y-kR-dhc" secondAttribute="top" id="RNV-Pe-gb1"/>
+                                    <constraint firstAttribute="height" constant="260" id="SKU-s7-KFk"/>
+                                    <constraint firstItem="Xuq-wF-E7l" firstAttribute="top" secondItem="FU0-PB-mLi" secondAttribute="bottom" id="Xz0-C7-6pO"/>
+                                    <constraint firstItem="FU0-PB-mLi" firstAttribute="leading" secondItem="p0Y-kR-dhc" secondAttribute="leading" id="dL1-48-m59"/>
+                                    <constraint firstItem="28l-YG-ZRN" firstAttribute="leading" secondItem="p0Y-kR-dhc" secondAttribute="leading" id="stD-7v-a7i"/>
+                                    <constraint firstItem="Xuq-wF-E7l" firstAttribute="leading" secondItem="p0Y-kR-dhc" secondAttribute="leading" id="tNP-tA-eSW"/>
+                                    <constraint firstAttribute="trailing" secondItem="28l-YG-ZRN" secondAttribute="trailing" id="uCI-yZ-eFM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text is not valid!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-PB-mLi">
-                                <rect key="frame" x="65" y="281" width="245" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="cN3-9k-ihu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.52549019610000003" green="0.1647058824" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xuq-wF-E7l" customClass="RoundedCornersButton" customModule="FlashCards" customModuleProvider="target">
-                                <rect key="frame" x="127.5" y="314" width="120" height="46"/>
-                                <color key="backgroundColor" red="0.078431372550000003" green="0.38823529410000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="07n-lk-qjs"/>
-                                    <constraint firstAttribute="height" constant="46" id="bcs-3h-h94"/>
-                                </constraints>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="23"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="onButtonPressed:" destination="cE0-ab-ANm" eventType="touchUpInside" id="e3s-87-abc"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Xuq-wF-E7l" firstAttribute="top" secondItem="FU0-PB-mLi" secondAttribute="bottom" constant="12" id="Gyz-il-Qmt"/>
-                            <constraint firstItem="FU0-PB-mLi" firstAttribute="top" secondItem="cww-s0-O1P" secondAttribute="bottom" constant="12" id="Mce-Xs-Dad"/>
-                            <constraint firstItem="cww-s0-O1P" firstAttribute="top" secondItem="QXW-IF-XH5" secondAttribute="top" constant="80" id="Tfy-Ec-1hA"/>
-                            <constraint firstItem="FU0-PB-mLi" firstAttribute="leading" secondItem="QXW-IF-XH5" secondAttribute="leading" constant="65" id="X8c-gS-YdV"/>
-                            <constraint firstItem="cww-s0-O1P" firstAttribute="leading" secondItem="QXW-IF-XH5" secondAttribute="leading" constant="65" id="l6x-xV-Zkq"/>
-                            <constraint firstItem="QXW-IF-XH5" firstAttribute="trailing" secondItem="cww-s0-O1P" secondAttribute="trailing" constant="65" id="raB-UT-Z8k"/>
-                            <constraint firstItem="Xuq-wF-E7l" firstAttribute="centerX" secondItem="B1i-zp-S1c" secondAttribute="centerX" id="yRs-67-w6l"/>
-                            <constraint firstItem="QXW-IF-XH5" firstAttribute="trailing" secondItem="FU0-PB-mLi" secondAttribute="trailing" constant="65" id="ztN-A3-rhn"/>
+                            <constraint firstItem="p0Y-kR-dhc" firstAttribute="centerX" secondItem="B1i-zp-S1c" secondAttribute="centerX" id="NXO-b2-sbv"/>
+                            <constraint firstItem="p0Y-kR-dhc" firstAttribute="centerY" secondItem="B1i-zp-S1c" secondAttribute="centerY" constant="-100" id="aWV-E1-gGd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QXW-IF-XH5"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3Gv-rz-aJa" appends="YES" id="0KS-dB-hr8"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="p0Y-kR-dhc" id="X7f-ec-f2M"/>
                         <outlet property="myTextView" destination="cww-s0-O1P" id="p4v-Cx-j5O"/>
                         <outlet property="warning" destination="FU0-PB-mLi" id="j88-bu-vSa"/>
-                        <segue destination="TLX-tZ-5t1" kind="show" identifier="toSetAnswer" id="x8w-5q-agz"/>
+                        <segue destination="TLX-tZ-5t1" kind="presentation" identifier="toSetAnswer" modalPresentationStyle="overCurrentContext" id="x8w-5q-agz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDk-yL-765" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3Gv-rz-aJa">
+                    <connections>
+                        <action selector="onTap:" destination="cE0-ab-ANm" id="I2d-0b-Djq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1813.5999999999999" y="714.69265367316348"/>
         </scene>
@@ -319,7 +362,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="guW-sy-wqB" customClass="MyTextView" customModule="FlashCards" customModuleProvider="target">
-                                <rect key="frame" x="65" y="144" width="245" height="125"/>
+                                <rect key="frame" x="65" y="100" width="245" height="125"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="aAZ-Kx-k6b"/>
@@ -333,7 +376,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text is not valid!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miv-n6-g8Y">
-                                <rect key="frame" x="65" y="281" width="245" height="21"/>
+                                <rect key="frame" x="65" y="237" width="245" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="wmy-OT-xwU"/>
                                 </constraints>
@@ -342,7 +385,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kuf-f4-MjC" customClass="RoundedCornersButton" customModule="FlashCards" customModuleProvider="target">
-                                <rect key="frame" x="127.5" y="314" width="120" height="46"/>
+                                <rect key="frame" x="127.5" y="270" width="120" height="46"/>
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.38823529410000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="h0y-IC-5mu"/>

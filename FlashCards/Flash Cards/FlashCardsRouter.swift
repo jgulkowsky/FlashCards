@@ -9,22 +9,19 @@
 import UIKit
 
 class FlashCardsRouter {
-    
-    private weak var controller: UIViewController!
-    private var category: Category!
-    private var flashCard: FlashCard?
-    
-    init(controller: UIViewController, category: Category, flashCard: FlashCard? = nil) {
-        self.controller = controller
-        self.category = category
-        self.flashCard = flashCard
+
+    static func routeToSetFlashCardQuestion(from controller: FlashCardsViewController) {
+        controller.performSegue(withIdentifier: Names.setFlashCardQuestionSegue, sender: controller)
     }
     
-    func routeToSetFlashCard() {
-        let vc = UIStoryboard.init(name: Names.storyBoard, bundle: Bundle.main).instantiateViewController(withIdentifier: Names.setFlashCardQuestionViewController) as! SetFlashCardQuestionViewController
-        vc.category = category
-        vc.flashCard = flashCard
-        vc.flashCardsVC = controller
-        controller.navigationController?.pushViewController(vc, animated: true)
+    static func sendParamsToSetFlashCardQuestion(_ delegate: Delegate, _ controller: FlashCardsViewController, _ segue: UIStoryboardSegue, _ category: Category, _ flashCard: FlashCard?) {
+        if segue.identifier == Names.setFlashCardQuestionSegue  {
+            if let destination = segue.destination as? SetFlashCardQuestionViewController {
+                destination.delegate = delegate
+                destination.flashCardsVC = controller
+                destination.category = category
+                destination.flashCard = flashCard
+            }
+        }
     }
 }

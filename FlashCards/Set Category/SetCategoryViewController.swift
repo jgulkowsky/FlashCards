@@ -13,10 +13,10 @@ class SetCategoryViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var warning: UILabel!
-    
-    var category: Category?
+
     var delegate: Delegate!
-    
+    var category: Category?
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
