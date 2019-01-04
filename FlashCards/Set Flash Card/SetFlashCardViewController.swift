@@ -69,7 +69,7 @@ class SetFlashCardViewController: UIViewController {
     }
     
     private func flip() {
-        UIView.transition(with: contentView, duration: AnimationConstants.Flip.duration, options: .transitionFlipFromRight, animations: nil, completion: nil)
+        UIView.transition(with: contentView, duration: AnimationConstants.Flip.duration, options: AnimationConstants.Flip.options, animations: nil, completion: nil)
         isSetQuestionMode = !isSetQuestionMode
         
         DispatchQueue.main.asyncAfter(deadline: .now() + AnimationConstants.Flip.duration / 2) {
@@ -83,6 +83,7 @@ class SetFlashCardViewController: UIViewController {
     private func goBack() {
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
+        delegate.notify()
     }
 }
 

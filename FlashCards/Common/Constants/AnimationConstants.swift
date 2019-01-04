@@ -11,7 +11,8 @@ import UIKit
 struct AnimationConstants {
 
     struct Flip {
-        static let duration = 0.3
+        static let duration = 0.75
+        static let options = UIView.AnimationOptions.transitionFlipFromRight
     }
     
     struct Swipe {
