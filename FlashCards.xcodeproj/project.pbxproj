@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03759673C87FBD9615BD2F77 /* Pods_FlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B38452C8BDC5B3A825D25788 /* Pods_FlashCards.framework */; };
+		CE13E41F21E00AE500C4ADF3 /* DelayedCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13E41E21E00AE500C4ADF3 /* DelayedCall.swift */; };
 		CE160D6D21D9495D00293E28 /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE160D6C21D9495D00293E28 /* GeneralConstants.swift */; };
 		CE160D7021D961D300293E28 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE160D6F21D961D300293E28 /* ColorHelper.swift */; };
 		CE160D7921D98A6300293E28 /* RoundedCornersButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE160D7821D98A6300293E28 /* RoundedCornersButton.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		79FABBE0F55F6611105461D1 /* Pods-FlashCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCards.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards.release.xcconfig"; sourceTree = "<group>"; };
 		B38452C8BDC5B3A825D25788 /* Pods_FlashCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE13E41E21E00AE500C4ADF3 /* DelayedCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedCall.swift; sourceTree = "<group>"; };
 		CE160D6C21D9495D00293E28 /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
 		CE160D6F21D961D300293E28 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		CE160D7821D98A6300293E28 /* RoundedCornersButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersButton.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				CE160D6F21D961D300293E28 /* ColorHelper.swift */,
+				CE13E41E21E00AE500C4ADF3 /* DelayedCall.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -173,17 +176,17 @@
 		CEF7736221C9584F005D81A4 /* FlashCards */ = {
 			isa = PBXGroup;
 			children = (
+				CEF7736321C9584F005D81A4 /* AppDelegate.swift */,
+				CEF7736721C9584F005D81A4 /* Main.storyboard */,
+				CEF7736C21C95850005D81A4 /* LaunchScreen.storyboard */,
+				CEF7736A21C95850005D81A4 /* Assets.xcassets */,
+				CEF7736F21C95850005D81A4 /* Info.plist */,
 				CEF773B521CAF1B1005D81A4 /* Data Model */,
 				CE160D7521D989D400293E28 /* Common */,
 				CEF7737521C9585B005D81A4 /* Category List */,
 				CEF773AE21CAACD9005D81A4 /* Flash Cards */,
 				CEF773AF21CAACE7005D81A4 /* Set Category */,
 				CEF773B021CAACEE005D81A4 /* Set Flash Card */,
-				CEF7736321C9584F005D81A4 /* AppDelegate.swift */,
-				CEF7736721C9584F005D81A4 /* Main.storyboard */,
-				CEF7736C21C95850005D81A4 /* LaunchScreen.storyboard */,
-				CEF7736A21C95850005D81A4 /* Assets.xcassets */,
-				CEF7736F21C95850005D81A4 /* Info.plist */,
 			);
 			path = FlashCards;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				CEF773B721CAF1F0005D81A4 /* Category.swift in Sources */,
 				CE160D7021D961D300293E28 /* ColorHelper.swift in Sources */,
 				CEF7737921C95AEA005D81A4 /* SetCategoryViewController.swift in Sources */,
+				CE13E41F21E00AE500C4ADF3 /* DelayedCall.swift in Sources */,
 				CEF773CF21CC1FA4005D81A4 /* FlashCardsWorker.swift in Sources */,
 				CEF7737F21C960D3005D81A4 /* CategoryListWorker.swift in Sources */,
 				CEF7736421C9584F005D81A4 /* AppDelegate.swift in Sources */,

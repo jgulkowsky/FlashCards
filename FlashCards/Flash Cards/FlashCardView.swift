@@ -112,9 +112,7 @@ extension FlashCardView {
     private func flip() {
         UIView.transition(with: self, duration: AnimationConstants.Flip.duration, options: AnimationConstants.Flip.options, animations: nil, completion: nil)
         isQuestionVisible = !isQuestionVisible
-        DispatchQueue.main.asyncAfter(deadline: .now() + AnimationConstants.Flip.duration / 2) {
-            self.updateLabel()
-        }
+        DelayedCall.call(with: AnimationConstants.Flip.duration / 2, self.updateLabel)
     }
 }
 

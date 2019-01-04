@@ -74,7 +74,7 @@ class SetFlashCardViewController: UIViewController {
         UIView.transition(with: contentView, duration: AnimationConstants.Flip.duration, options: AnimationConstants.Flip.options, animations: nil, completion: nil)
         isSetQuestionMode = !isSetQuestionMode
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + AnimationConstants.Flip.duration / 2) {
+        DelayedCall.call(with: AnimationConstants.Flip.duration / 2) {
             self.titleLabel.text = self.isSetQuestionMode ? Names.setFlashCardTitle_Question : Names.setFlashCardTitle_Answer
             self.myTextView.text = self.isSetQuestionMode ? self.question : self.answer
             let buttonTitle = self.isSetQuestionMode ? Names.setFlashCardButtonTitle_Question : Names.setFlashCardButtonTitle_Answer
