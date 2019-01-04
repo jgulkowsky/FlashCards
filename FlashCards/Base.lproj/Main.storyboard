@@ -56,41 +56,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ek8-MN-CRe">
-                                <rect key="frame" x="67.5" y="269.5" width="240" height="128"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You haven't added any cards yet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XI1-Sg-o9d">
-                                        <rect key="frame" x="2" y="22" width="236" height="42"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="42" id="YGq-mC-b1D"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haS-wK-Xrh">
-                                        <rect key="frame" x="12" y="76" width="216" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="zF1-eg-dMH"/>
-                                        </constraints>
-                                        <state key="normal" title="Click here to add your first card"/>
-                                        <connections>
-                                            <action selector="onNoCardsButtonPressed:" destination="lhP-w1-NLm" eventType="touchUpInside" id="q5G-DT-Bk1"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="haS-wK-Xrh" firstAttribute="top" secondItem="XI1-Sg-o9d" secondAttribute="bottom" constant="12" id="0Pv-Cy-JWz"/>
-                                    <constraint firstAttribute="trailing" secondItem="haS-wK-Xrh" secondAttribute="trailing" constant="12" id="4rL-82-uI5"/>
-                                    <constraint firstAttribute="width" constant="240" id="Lwu-lk-LMK"/>
-                                    <constraint firstItem="XI1-Sg-o9d" firstAttribute="leading" secondItem="ek8-MN-CRe" secondAttribute="leading" constant="2" id="W2B-iD-KSY"/>
-                                    <constraint firstItem="XI1-Sg-o9d" firstAttribute="top" secondItem="ek8-MN-CRe" secondAttribute="top" constant="22" id="d8t-07-UZa"/>
-                                    <constraint firstAttribute="height" constant="128" id="gAi-1x-RQS"/>
-                                    <constraint firstItem="haS-wK-Xrh" firstAttribute="leading" secondItem="ek8-MN-CRe" secondAttribute="leading" constant="12" id="xjv-Kj-aO4"/>
-                                    <constraint firstAttribute="trailing" secondItem="XI1-Sg-o9d" secondAttribute="trailing" constant="2" id="yUI-6M-oDe"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYg-7C-6vw" userLabel="Reshuffle Button">
                                 <rect key="frame" x="157.5" y="303.5" width="60" height="60"/>
                                 <constraints>
@@ -106,19 +71,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ek8-MN-CRe" firstAttribute="centerY" secondItem="UfD-wf-LtM" secondAttribute="centerY" id="AQ3-N0-Kqf"/>
                             <constraint firstItem="cYg-7C-6vw" firstAttribute="centerY" secondItem="UfD-wf-LtM" secondAttribute="centerY" id="Cbj-7f-wea"/>
-                            <constraint firstItem="haS-wK-Xrh" firstAttribute="leading" secondItem="UfD-wf-LtM" secondAttribute="leading" constant="79.5" id="QFG-D7-itc"/>
-                            <constraint firstItem="ek8-MN-CRe" firstAttribute="centerX" secondItem="UfD-wf-LtM" secondAttribute="centerX" id="Z44-cE-dB2"/>
-                            <constraint firstAttribute="trailing" secondItem="haS-wK-Xrh" secondAttribute="trailing" constant="79.5" id="ZAw-60-JPW"/>
                             <constraint firstItem="cYg-7C-6vw" firstAttribute="centerX" secondItem="UfD-wf-LtM" secondAttribute="centerX" id="yQb-93-afF"/>
-                            <constraint firstItem="haS-wK-Xrh" firstAttribute="top" secondItem="XI1-Sg-o9d" secondAttribute="bottom" constant="12" id="zDW-xD-nMR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xAh-cL-h7X"/>
                     </view>
                     <connections>
-                        <outlet property="noCardsButton" destination="haS-wK-Xrh" id="93i-ta-JK5"/>
-                        <outlet property="noCardsLabel" destination="XI1-Sg-o9d" id="ZcH-rc-amk"/>
                         <outlet property="reshuffleButton" destination="cYg-7C-6vw" id="tKm-4b-bab"/>
                         <segue destination="cE0-ab-ANm" kind="presentation" identifier="toSetFlashCard" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="1hK-82-voi"/>
                     </connections>

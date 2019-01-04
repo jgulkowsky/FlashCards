@@ -16,8 +16,6 @@ protocol FlashCardViewDelegate {
 
 class FlashCardsViewController: UIViewController {
 
-    @IBOutlet weak var noCardsLabel: UILabel!
-    @IBOutlet weak var noCardsButton: UIButton!
     @IBOutlet weak var reshuffleButton: UIButton!
     
     var category: Category!
@@ -41,7 +39,7 @@ class FlashCardsViewController: UIViewController {
     
     @IBAction func onReshuffleButtonPressed(_ sender: UIButton) {
         addCardsIfPossible()
-        showNextCardOrReshuffleButtonOrNoCardsItems()
+        showNextCardOrReshuffleButton()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,7 +54,7 @@ extension FlashCardsViewController {
         addAddButtonItem()
         setTitle()
         addCardsIfPossible()
-        showNextCardOrReshuffleButtonOrNoCardsItems()
+        showNextCardOrReshuffleButton()
     }
     
     private func setTitle() {
@@ -71,11 +69,6 @@ extension FlashCardsViewController {
         FlashCardsRouter.routeToSetFlashCard(from: self)
     }
     
-    private func setNoCardsItemsVisibility(to visibile: Bool) {
-        noCardsLabel.isHidden = !visibile
-        noCardsButton.isHidden = !visibile
-    }
-    
     private func addCardsIfPossible() {
         category.flashCards.forEach { flashCard in
             let flashCardView = FlashCardView()
@@ -86,13 +79,14 @@ extension FlashCardsViewController {
         cardViews.shuffle()
     }
     
-    private func showNextCardOrReshuffleButtonOrNoCardsItems() {
-        setNoCardsItemsVisibility(to: false)
+    private func showNextCardOrReshuffleButton() {
         reshuffleButton.isHidden = true
         
         if category.flashCards.isEmpty {
-            setNoCardsItemsVisibility(to: true)
-        } else if self.cardViews.isEmpty {
+            return
+        }
+        
+        if self.cardViews.isEmpty {
             reshuffleButton.isHidden = false
             reshuffleButton.isUserInteractionEnabled = true
         } else {
@@ -147,7 +141,7 @@ extension FlashCardsViewController: FlashCardViewDelegate {
         }
         cardViews[0].removeFromSuperview()
         cardViews.remove(at: 0)
-        showNextCardOrReshuffleButtonOrNoCardsItems()
+        showNextCardOrReshuffleButton()
     }
 }
 
