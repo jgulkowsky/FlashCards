@@ -10,15 +10,14 @@ import UIKit
 
 class FlashCardsRouter {
 
-    static func routeToSetFlashCardQuestion(from controller: FlashCardsViewController) {
-        controller.performSegue(withIdentifier: Names.setFlashCardQuestionSegue, sender: controller)
+    static func routeToSetFlashCard(from controller: FlashCardsViewController) {
+        controller.performSegue(withIdentifier: Names.setFlashCardSegue, sender: controller)
     }
     
-    static func sendParamsToSetFlashCardQuestion(_ delegate: Delegate, _ controller: FlashCardsViewController, _ segue: UIStoryboardSegue, _ category: Category, _ flashCard: FlashCard?) {
-        if segue.identifier == Names.setFlashCardQuestionSegue  {
-            if let destination = segue.destination as? SetFlashCardQuestionViewController {
+    static func sendParamsToSetFlashCard(_ delegate: Delegate, _ segue: UIStoryboardSegue, _ category: Category, _ flashCard: FlashCard?) {
+        if segue.identifier == Names.setFlashCardSegue  {
+            if let destination = segue.destination as? SetFlashCardViewController {
                 destination.delegate = delegate
-                destination.flashCardsVC = controller
                 destination.category = category
                 destination.flashCard = flashCard
             }

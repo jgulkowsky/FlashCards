@@ -1,5 +1,5 @@
 //
-//  SetFlashCardAnswerWorker.swift
+//  SetFlashCardWorker.swift
 //  FlashCards
 //
 //  Created by user on 20/12/2018.
@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class SetFlashCardAnswerWorker {
+class SetFlashCardWorker {
     
     private let realm = try! Realm()
     

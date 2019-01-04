@@ -41,6 +41,10 @@ class FlashCardView: UIView {
         self.isHidden = false
     }
     
+    func hide() {
+        self.isHidden = true
+    }
+    
     private func initializeView() {
         self.backgroundColor = .white
         self.layer.cornerRadius = 20

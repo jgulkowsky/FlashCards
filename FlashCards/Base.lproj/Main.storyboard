@@ -120,7 +120,7 @@
                         <outlet property="noCardsButton" destination="haS-wK-Xrh" id="93i-ta-JK5"/>
                         <outlet property="noCardsLabel" destination="XI1-Sg-o9d" id="ZcH-rc-amk"/>
                         <outlet property="reshuffleButton" destination="cYg-7C-6vw" id="tKm-4b-bab"/>
-                        <segue destination="cE0-ab-ANm" kind="presentation" identifier="toSetQuestion" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="1hK-82-voi"/>
+                        <segue destination="cE0-ab-ANm" kind="presentation" identifier="toSetFlashCard" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="1hK-82-voi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKJ-uC-Dwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -236,10 +236,10 @@
             </objects>
             <point key="canvasLocation" x="1815.2" y="-24.7376311844078"/>
         </scene>
-        <!--Set Flash Card Question View Controller-->
+        <!--Set Flash Card View Controller-->
         <scene sceneID="6mU-Tj-HZk">
             <objects>
-                <viewController storyboardIdentifier="SetFlashCardQuestionViewController" id="cE0-ab-ANm" userLabel="Set Flash Card Question View Controller" customClass="SetFlashCardQuestionViewController" customModule="FlashCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetFlashCardQuestionViewController" id="cE0-ab-ANm" userLabel="Set Flash Card View Controller" customClass="SetFlashCardViewController" customModule="FlashCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B1i-zp-S1c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,7 +247,47 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0Y-kR-dhc" userLabel="Content">
                                 <rect key="frame" x="67.5" y="103.5" width="240" height="260"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xuq-wF-E7l">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28l-YG-ZRN" userLabel="Top">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="46"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35d-AY-ccR" userLabel="TitleLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="46"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.098039215690000001" green="0.38431372549999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="35d-AY-ccR" firstAttribute="leading" secondItem="28l-YG-ZRN" secondAttribute="leading" id="5YH-zO-e5e"/>
+                                            <constraint firstAttribute="trailing" secondItem="35d-AY-ccR" secondAttribute="trailing" id="PSS-LS-Y70"/>
+                                            <constraint firstItem="35d-AY-ccR" firstAttribute="top" secondItem="28l-YG-ZRN" secondAttribute="top" id="aHa-qK-xg5"/>
+                                            <constraint firstAttribute="bottom" secondItem="35d-AY-ccR" secondAttribute="bottom" id="iBl-iz-hee"/>
+                                            <constraint firstAttribute="height" constant="46" id="yEE-kH-w40"/>
+                                        </constraints>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cww-s0-O1P" customClass="MyTextView" customModule="FlashCards" customModuleProvider="target">
+                                        <rect key="frame" x="21" y="66" width="198" height="90"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="Psk-Ra-WWQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text is not valid!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-PB-mLi">
+                                        <rect key="frame" x="0.0" y="156" width="240" height="58"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.52549019610000003" green="0.1647058824" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xuq-wF-E7l" userLabel="Button">
                                         <rect key="frame" x="0.0" y="214" width="240" height="46"/>
                                         <color key="backgroundColor" red="0.078431372550000003" green="0.38823529410000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -265,46 +305,6 @@
                                             <action selector="onButtonPressed:" destination="cE0-ab-ANm" eventType="touchUpInside" id="e3s-87-abc"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cww-s0-O1P" customClass="MyTextView" customModule="FlashCards" customModuleProvider="target">
-                                        <rect key="frame" x="21" y="66" width="198" height="90"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="Psk-Ra-WWQ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28l-YG-ZRN">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="46"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35d-AY-ccR">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="46"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.098039215690000001" green="0.38431372549999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstItem="35d-AY-ccR" firstAttribute="leading" secondItem="28l-YG-ZRN" secondAttribute="leading" id="5YH-zO-e5e"/>
-                                            <constraint firstAttribute="trailing" secondItem="35d-AY-ccR" secondAttribute="trailing" id="PSS-LS-Y70"/>
-                                            <constraint firstItem="35d-AY-ccR" firstAttribute="top" secondItem="28l-YG-ZRN" secondAttribute="top" id="aHa-qK-xg5"/>
-                                            <constraint firstAttribute="bottom" secondItem="35d-AY-ccR" secondAttribute="bottom" id="iBl-iz-hee"/>
-                                            <constraint firstAttribute="height" constant="46" id="yEE-kH-w40"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text is not valid!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-PB-mLi">
-                                        <rect key="frame" x="0.0" y="156" width="240" height="58"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.52549019610000003" green="0.1647058824" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -338,10 +338,11 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="button" destination="Xuq-wF-E7l" id="dsH-Yo-vJe"/>
                         <outlet property="contentView" destination="p0Y-kR-dhc" id="X7f-ec-f2M"/>
                         <outlet property="myTextView" destination="cww-s0-O1P" id="p4v-Cx-j5O"/>
+                        <outlet property="titleLabel" destination="35d-AY-ccR" id="PbS-dm-IwE"/>
                         <outlet property="warning" destination="FU0-PB-mLi" id="j88-bu-vSa"/>
-                        <segue destination="TLX-tZ-5t1" kind="presentation" identifier="toSetAnswer" modalPresentationStyle="overCurrentContext" id="x8w-5q-agz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDk-yL-765" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -352,79 +353,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1813.5999999999999" y="714.69265367316348"/>
-        </scene>
-        <!--Set Flash Card Answer View Controller-->
-        <scene sceneID="eM7-6l-wIf">
-            <objects>
-                <viewController storyboardIdentifier="SetFlashCardAnswerViewController" id="TLX-tZ-5t1" userLabel="Set Flash Card Answer View Controller" customClass="SetFlashCardAnswerViewController" customModule="FlashCards" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="50S-Br-N8s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="guW-sy-wqB" customClass="MyTextView" customModule="FlashCards" customModuleProvider="target">
-                                <rect key="frame" x="65" y="100" width="245" height="125"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="aAZ-Kx-k6b"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text is not valid!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miv-n6-g8Y">
-                                <rect key="frame" x="65" y="237" width="245" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="wmy-OT-xwU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.52549019610000003" green="0.1647058824" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kuf-f4-MjC" customClass="RoundedCornersButton" customModule="FlashCards" customModuleProvider="target">
-                                <rect key="frame" x="127.5" y="270" width="120" height="46"/>
-                                <color key="backgroundColor" red="0.078431372550000003" green="0.38823529410000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="h0y-IC-5mu"/>
-                                    <constraint firstAttribute="width" constant="120" id="zDC-Aw-rhy"/>
-                                </constraints>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="23"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="onButtonPressed:" destination="TLX-tZ-5t1" eventType="touchUpInside" id="aNF-pz-fp3"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="guW-sy-wqB" firstAttribute="top" secondItem="gAi-Yj-JuP" secondAttribute="top" constant="80" id="A9M-ug-2j5"/>
-                            <constraint firstItem="miv-n6-g8Y" firstAttribute="top" secondItem="guW-sy-wqB" secondAttribute="bottom" constant="12" id="G2z-V0-E7N"/>
-                            <constraint firstItem="guW-sy-wqB" firstAttribute="leading" secondItem="gAi-Yj-JuP" secondAttribute="leading" constant="65" id="NIh-I6-N2H"/>
-                            <constraint firstItem="gAi-Yj-JuP" firstAttribute="trailing" secondItem="guW-sy-wqB" secondAttribute="trailing" constant="65" id="Wb2-vD-uyV"/>
-                            <constraint firstItem="miv-n6-g8Y" firstAttribute="leading" secondItem="gAi-Yj-JuP" secondAttribute="leading" constant="65" id="Zdf-Zf-5Dr"/>
-                            <constraint firstItem="Kuf-f4-MjC" firstAttribute="top" secondItem="miv-n6-g8Y" secondAttribute="bottom" constant="12" id="bVT-YX-a7O"/>
-                            <constraint firstItem="Kuf-f4-MjC" firstAttribute="centerX" secondItem="50S-Br-N8s" secondAttribute="centerX" id="j5Y-dV-50S"/>
-                            <constraint firstItem="gAi-Yj-JuP" firstAttribute="trailing" secondItem="miv-n6-g8Y" secondAttribute="trailing" constant="65" id="zGW-SQ-48n"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="gAi-Yj-JuP"/>
-                    </view>
-                    <connections>
-                        <outlet property="myTextView" destination="guW-sy-wqB" id="LS0-bE-TXi"/>
-                        <outlet property="warning" destination="miv-n6-g8Y" id="aq8-Yu-HgV"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Mb-Z9-GvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2644" y="715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tqi-aw-cON">

@@ -13,19 +13,11 @@ struct Names {
     static let categoryListCell = "CategoryListCell"
     static let storyBoard = "Main"
     
-    static let categoryListViewController = "CategoryListViewController"
     static let flashCardsViewController = "FlashCardsViewController"
-    static let setCategoryViewController = "SetCategoryViewController"
-    static let setFlashCardQuestionViewController = "SetFlashCardQuestionViewController"
-    static let setFlashCardAnswerViewController = "SetFlashCardAnswerViewController"
     
     static let setCategorySegue = "toSetCategory"
-    static let setFlashCardQuestionSegue = "toSetQuestion"
-    static let setFlashCardAnswerSegue = "toSetAnswer"
+    static let setFlashCardSegue = "toSetFlashCard"
     
-    static let setCategoryNavigationTitle = "Set Category Title"
-    static let setFlashCardQuestionNavigationTitle = "Set Question"
-    static let setFlashCardAnswerNavigationTitle = "Set Answer"
     static let backButtonText = "Back"
     
     static let categoryListCellEditTitle = "Edit"
@@ -35,4 +27,9 @@ struct Names {
     static let flashCardsAlertEditTitle = "Edit"
     static let flashCardsAlertDeleteTitle = "Delete"
     static let flashCardsAlertCancelTitle = "Cancel"
+    
+    static let setFlashCardTitle_Question = "Set Question"
+    static let setFlashCardTitle_Answer = "Set Answer"
+    static let setFlashCardButtonTitle_Question = "Next"
+    static let setFlashCardButtonTitle_Answer = "Save"
 }

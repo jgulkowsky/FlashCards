@@ -15,15 +15,12 @@
 		CE18C7CD21DEBF5E00F8347D /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18C7CC21DEBF5E00F8347D /* Delegate.swift */; };
 		CE46A88E21D4FC5D00F0B4CC /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46A88D21D4FC5D00F0B4CC /* AnimationConstants.swift */; };
 		CE78822721CE73F1002F8640 /* BackButtonTitleSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78822621CE73F1002F8640 /* BackButtonTitleSetter.swift */; };
-		CE78822A21CE7A47002F8640 /* SetFlashCardAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78822921CE7A47002F8640 /* SetFlashCardAnswerViewController.swift */; };
-		CE78822C21CE7B95002F8640 /* SetFlashCardAnswerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78822B21CE7B95002F8640 /* SetFlashCardAnswerRouter.swift */; };
-		CE78822E21CE7DF3002F8640 /* SetFlashCardQuestionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78822D21CE7DF3002F8640 /* SetFlashCardQuestionWorker.swift */; };
 		CEF7736421C9584F005D81A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7736321C9584F005D81A4 /* AppDelegate.swift */; };
 		CEF7736621C9584F005D81A4 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7736521C9584F005D81A4 /* CategoryListViewController.swift */; };
 		CEF7736921C9584F005D81A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF7736721C9584F005D81A4 /* Main.storyboard */; };
 		CEF7736B21C95850005D81A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF7736A21C95850005D81A4 /* Assets.xcassets */; };
 		CEF7736E21C95850005D81A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF7736C21C95850005D81A4 /* LaunchScreen.storyboard */; };
-		CEF7737721C95AD3005D81A4 /* SetFlashCardQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7737621C95AD3005D81A4 /* SetFlashCardQuestionViewController.swift */; };
+		CEF7737721C95AD3005D81A4 /* SetFlashCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7737621C95AD3005D81A4 /* SetFlashCardViewController.swift */; };
 		CEF7737921C95AEA005D81A4 /* SetCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7737821C95AEA005D81A4 /* SetCategoryViewController.swift */; };
 		CEF7737B21C95AF7005D81A4 /* FlashCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7737A21C95AF6005D81A4 /* FlashCardsViewController.swift */; };
 		CEF7737D21C9606B005D81A4 /* CategoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7737C21C9606B005D81A4 /* CategoryListRouter.swift */; };
@@ -32,10 +29,8 @@
 		CEF773B721CAF1F0005D81A4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773B621CAF1F0005D81A4 /* Category.swift */; };
 		CEF773B921CAF3A6005D81A4 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773B821CAF3A6005D81A4 /* FlashCard.swift */; };
 		CEF773BB21CB0FF4005D81A4 /* SetCategoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773BA21CB0FF4005D81A4 /* SetCategoryWorker.swift */; };
-		CEF773BD21CB1D66005D81A4 /* SetCategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773BC21CB1D66005D81A4 /* SetCategoryRouter.swift */; };
 		CEF773C321CBD034005D81A4 /* FlashCardsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C221CBD034005D81A4 /* FlashCardsRouter.swift */; };
-		CEF773C521CBDD15005D81A4 /* SetFlashCardAnswerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C421CBDD15005D81A4 /* SetFlashCardAnswerWorker.swift */; };
-		CEF773C721CBE022005D81A4 /* SetFlashCardQuestionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C621CBE022005D81A4 /* SetFlashCardQuestionRouter.swift */; };
+		CEF773C521CBDD15005D81A4 /* SetFlashCardWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C421CBDD15005D81A4 /* SetFlashCardWorker.swift */; };
 		CEF773C921CBF5AD005D81A4 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773C821CBF5AD005D81A4 /* FlashCardView.swift */; };
 		CEF773CF21CC1FA4005D81A4 /* FlashCardsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF773CE21CC1FA4005D81A4 /* FlashCardsWorker.swift */; };
 /* End PBXBuildFile section */
@@ -50,9 +45,6 @@
 		CE18C7CC21DEBF5E00F8347D /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		CE46A88D21D4FC5D00F0B4CC /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
 		CE78822621CE73F1002F8640 /* BackButtonTitleSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonTitleSetter.swift; sourceTree = "<group>"; };
-		CE78822921CE7A47002F8640 /* SetFlashCardAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardAnswerViewController.swift; sourceTree = "<group>"; };
-		CE78822B21CE7B95002F8640 /* SetFlashCardAnswerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardAnswerRouter.swift; sourceTree = "<group>"; };
-		CE78822D21CE7DF3002F8640 /* SetFlashCardQuestionWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardQuestionWorker.swift; sourceTree = "<group>"; };
 		CEF7736021C9584F005D81A4 /* FlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF7736321C9584F005D81A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF7736521C9584F005D81A4 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +52,7 @@
 		CEF7736A21C95850005D81A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF7736D21C95850005D81A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEF7736F21C95850005D81A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEF7737621C95AD3005D81A4 /* SetFlashCardQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardQuestionViewController.swift; sourceTree = "<group>"; };
+		CEF7737621C95AD3005D81A4 /* SetFlashCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardViewController.swift; sourceTree = "<group>"; };
 		CEF7737821C95AEA005D81A4 /* SetCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryViewController.swift; sourceTree = "<group>"; };
 		CEF7737A21C95AF6005D81A4 /* FlashCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsViewController.swift; sourceTree = "<group>"; };
 		CEF7737C21C9606B005D81A4 /* CategoryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListRouter.swift; sourceTree = "<group>"; };
@@ -69,10 +61,8 @@
 		CEF773B621CAF1F0005D81A4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CEF773B821CAF3A6005D81A4 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		CEF773BA21CB0FF4005D81A4 /* SetCategoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryWorker.swift; sourceTree = "<group>"; };
-		CEF773BC21CB1D66005D81A4 /* SetCategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCategoryRouter.swift; sourceTree = "<group>"; };
 		CEF773C221CBD034005D81A4 /* FlashCardsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsRouter.swift; sourceTree = "<group>"; };
-		CEF773C421CBDD15005D81A4 /* SetFlashCardAnswerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardAnswerWorker.swift; sourceTree = "<group>"; };
-		CEF773C621CBE022005D81A4 /* SetFlashCardQuestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardQuestionRouter.swift; sourceTree = "<group>"; };
+		CEF773C421CBDD15005D81A4 /* SetFlashCardWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFlashCardWorker.swift; sourceTree = "<group>"; };
 		CEF773C821CBF5AD005D81A4 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
 		CEF773CE21CC1FA4005D81A4 /* FlashCardsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsWorker.swift; sourceTree = "<group>"; };
 		FA210BD8BDF2F2BBE1454004 /* Pods-FlashCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCards.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCards/Pods-FlashCards.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,16 +152,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		CE78822821CE7A1D002F8640 /* Set Flash Card Answer */ = {
-			isa = PBXGroup;
-			children = (
-				CE78822921CE7A47002F8640 /* SetFlashCardAnswerViewController.swift */,
-				CE78822B21CE7B95002F8640 /* SetFlashCardAnswerRouter.swift */,
-				CEF773C421CBDD15005D81A4 /* SetFlashCardAnswerWorker.swift */,
-			);
-			path = "Set Flash Card Answer";
-			sourceTree = "<group>";
-		};
 		CEF7735721C9584F005D81A4 = {
 			isa = PBXGroup;
 			children = (
@@ -198,8 +178,7 @@
 				CEF7737521C9585B005D81A4 /* Category List */,
 				CEF773AE21CAACD9005D81A4 /* Flash Cards */,
 				CEF773AF21CAACE7005D81A4 /* Set Category */,
-				CEF773B021CAACEE005D81A4 /* Set Flash Card Question */,
-				CE78822821CE7A1D002F8640 /* Set Flash Card Answer */,
+				CEF773B021CAACEE005D81A4 /* Set Flash Card */,
 				CEF7736321C9584F005D81A4 /* AppDelegate.swift */,
 				CEF7736721C9584F005D81A4 /* Main.storyboard */,
 				CEF7736C21C95850005D81A4 /* LaunchScreen.storyboard */,
@@ -234,20 +213,18 @@
 			isa = PBXGroup;
 			children = (
 				CEF7737821C95AEA005D81A4 /* SetCategoryViewController.swift */,
-				CEF773BC21CB1D66005D81A4 /* SetCategoryRouter.swift */,
 				CEF773BA21CB0FF4005D81A4 /* SetCategoryWorker.swift */,
 			);
 			path = "Set Category";
 			sourceTree = "<group>";
 		};
-		CEF773B021CAACEE005D81A4 /* Set Flash Card Question */ = {
+		CEF773B021CAACEE005D81A4 /* Set Flash Card */ = {
 			isa = PBXGroup;
 			children = (
-				CEF7737621C95AD3005D81A4 /* SetFlashCardQuestionViewController.swift */,
-				CEF773C621CBE022005D81A4 /* SetFlashCardQuestionRouter.swift */,
-				CE78822D21CE7DF3002F8640 /* SetFlashCardQuestionWorker.swift */,
+				CEF7737621C95AD3005D81A4 /* SetFlashCardViewController.swift */,
+				CEF773C421CBDD15005D81A4 /* SetFlashCardWorker.swift */,
 			);
-			path = "Set Flash Card Question";
+			path = "Set Flash Card";
 			sourceTree = "<group>";
 		};
 		CEF773B521CAF1B1005D81A4 /* Data Model */ = {
@@ -383,11 +360,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF7737721C95AD3005D81A4 /* SetFlashCardQuestionViewController.swift in Sources */,
+				CEF7737721C95AD3005D81A4 /* SetFlashCardViewController.swift in Sources */,
 				CE160D6D21D9495D00293E28 /* GeneralConstants.swift in Sources */,
-				CEF773C521CBDD15005D81A4 /* SetFlashCardAnswerWorker.swift in Sources */,
+				CEF773C521CBDD15005D81A4 /* SetFlashCardWorker.swift in Sources */,
 				CEF773C921CBF5AD005D81A4 /* FlashCardView.swift in Sources */,
-				CEF773C721CBE022005D81A4 /* SetFlashCardQuestionRouter.swift in Sources */,
 				CEF773C321CBD034005D81A4 /* FlashCardsRouter.swift in Sources */,
 				CEF7736621C9584F005D81A4 /* CategoryListViewController.swift in Sources */,
 				CE160D7921D98A6300293E28 /* RoundedCornersButton.swift in Sources */,
@@ -398,12 +374,8 @@
 				CE18C7CD21DEBF5E00F8347D /* Delegate.swift in Sources */,
 				CEF7737D21C9606B005D81A4 /* CategoryListRouter.swift in Sources */,
 				CEF773BB21CB0FF4005D81A4 /* SetCategoryWorker.swift in Sources */,
-				CE78822A21CE7A47002F8640 /* SetFlashCardAnswerViewController.swift in Sources */,
-				CEF773BD21CB1D66005D81A4 /* SetCategoryRouter.swift in Sources */,
 				CEF773B921CAF3A6005D81A4 /* FlashCard.swift in Sources */,
-				CE78822E21CE7DF3002F8640 /* SetFlashCardQuestionWorker.swift in Sources */,
 				CEF7737B21C95AF7005D81A4 /* FlashCardsViewController.swift in Sources */,
-				CE78822C21CE7B95002F8640 /* SetFlashCardAnswerRouter.swift in Sources */,
 				CEF773B721CAF1F0005D81A4 /* Category.swift in Sources */,
 				CE160D7021D961D300293E28 /* ColorHelper.swift in Sources */,
 				CEF7737921C95AEA005D81A4 /* SetCategoryViewController.swift in Sources */,

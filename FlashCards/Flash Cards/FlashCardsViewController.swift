@@ -36,7 +36,7 @@ class FlashCardsViewController: UIViewController {
     }
     
     @IBAction func onNoCardsButtonPressed(_ sender: UIButton) {
-        FlashCardsRouter.routeToSetFlashCardQuestion(from: self)
+        FlashCardsRouter.routeToSetFlashCard(from: self)
     }
     
     @IBAction func onReshuffleButtonPressed(_ sender: UIButton) {
@@ -45,7 +45,7 @@ class FlashCardsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        FlashCardsRouter.sendParamsToSetFlashCardQuestion(self, self, segue, category, flashCardToSend)
+        FlashCardsRouter.sendParamsToSetFlashCard(self, segue, category, flashCardToSend)
     }
 }
 
@@ -68,7 +68,7 @@ extension FlashCardsViewController {
     }
     
     @objc private func onAddButtonPressed() {
-        FlashCardsRouter.routeToSetFlashCardQuestion(from: self)
+        FlashCardsRouter.routeToSetFlashCard(from: self)
     }
     
     private func setNoCardsItemsVisibility(to visibile: Bool) {
@@ -127,7 +127,7 @@ extension FlashCardsViewController: FlashCardViewDelegate {
         
         alert.addAction(UIAlertAction(title: Names.flashCardsAlertEditTitle, style: .default) { action in
             self.flashCardToSend = flashCard
-            FlashCardsRouter.routeToSetFlashCardQuestion(from: self)
+            FlashCardsRouter.routeToSetFlashCard(from: self)
         })
         
         alert.addAction(UIAlertAction(title: Names.flashCardsAlertDeleteTitle, style: .destructive) { action in
@@ -153,6 +153,6 @@ extension FlashCardsViewController: FlashCardViewDelegate {
 extension FlashCardsViewController: Delegate {
     
     func notify() {
-        onInit()
+        flashCardToSend = nil
     }
 }
