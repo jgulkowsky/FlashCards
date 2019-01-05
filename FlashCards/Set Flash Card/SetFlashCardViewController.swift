@@ -12,6 +12,7 @@ class SetFlashCardViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var myTextView: MyTextView!
     @IBOutlet weak var warning: UILabel!
     @IBOutlet weak var button: UIButton!
@@ -26,12 +27,10 @@ class SetFlashCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let flashCard = flashCard {
-            question = flashCard.question
-            answer = flashCard.answer
-        }
+        setQuestionAndAnswer()
         setContentView()
         setMyTextView()
+        backButton.isHidden = true
         warning.isHidden = true
     }
     
@@ -56,9 +55,22 @@ class SetFlashCardViewController: UIViewController {
         }
     }
     
+    @IBAction func onBackButtonPressed(_ sender: UIButton) {
+        warning.isHidden = true
+        answer = myTextView.text
+        flip()
+    }
+    
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
         goBack()
         delegate.notify(with: nil)
+    }
+    
+    private func setQuestionAndAnswer() {
+        if let flashCard = flashCard {
+            question = flashCard.question
+            answer = flashCard.answer
+        }
     }
     
     private func setContentView() {
@@ -78,6 +90,7 @@ class SetFlashCardViewController: UIViewController {
         
         DelayedCall.call(with: AnimationConstants.Flip.duration / 2) {
             self.titleLabel.text = self.isSetQuestionMode ? Names.setFlashCardTitle_Question : Names.setFlashCardTitle_Answer
+            self.backButton.isHidden = self.isSetQuestionMode ? true : false
             self.myTextView.text = self.isSetQuestionMode ? self.question : self.answer
             let buttonTitle = self.isSetQuestionMode ? Names.setFlashCardButtonTitle_Question : Names.setFlashCardButtonTitle_Answer
             self.button.setTitle(buttonTitle, for: .normal)
