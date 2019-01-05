@@ -13,7 +13,8 @@ class SetCategoryViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var warning: UILabel!
-
+    @IBOutlet var tapGesture: UITapGestureRecognizer!
+    
     var delegate: Delegate!
     var category: Category?
 
@@ -29,6 +30,7 @@ class SetCategoryViewController: UIViewController {
         textField.becomeFirstResponder()
         
         warning.isHidden = true
+        tapGesture.delegate = self
     }
     
     @IBAction func onButtonPressed(_ sender: UIButton) {
@@ -55,5 +57,12 @@ class SetCategoryViewController: UIViewController {
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
         delegate.notify(with: nil)
+    }
+}
+
+extension SetCategoryViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return !contentView.bounds.contains(touch.location(in: contentView))
     }
 }

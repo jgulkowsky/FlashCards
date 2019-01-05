@@ -162,12 +162,13 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="4Q6-q4-fNh" id="N07-Ku-yIo"/>
+                        <outlet property="tapGesture" destination="Zsd-oh-AYp" id="sWU-iu-V2U"/>
                         <outlet property="textField" destination="gzL-Wa-OJN" id="xmb-i3-eKR"/>
                         <outlet property="warning" destination="MXP-Z6-HQC" id="xeq-N7-tZr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0s-M4-ZJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Zsd-oh-AYp">
+                <tapGestureRecognizer id="Zsd-oh-AYp" userLabel="Tap Gesture">
                     <connections>
                         <action selector="onTap:" destination="rL5-5v-yAJ" id="bAm-R2-tg0"/>
                     </connections>
@@ -295,6 +296,7 @@
                         <outlet property="button" destination="Xuq-wF-E7l" id="dsH-Yo-vJe"/>
                         <outlet property="contentView" destination="p0Y-kR-dhc" id="X7f-ec-f2M"/>
                         <outlet property="myTextView" destination="cww-s0-O1P" id="p4v-Cx-j5O"/>
+                        <outlet property="tapGesture" destination="3Gv-rz-aJa" id="j1O-cR-KUU"/>
                         <outlet property="titleLabel" destination="35d-AY-ccR" id="PbS-dm-IwE"/>
                         <outlet property="warning" destination="FU0-PB-mLi" id="j88-bu-vSa"/>
                     </connections>

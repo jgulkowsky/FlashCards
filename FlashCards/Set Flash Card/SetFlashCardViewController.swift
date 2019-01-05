@@ -16,6 +16,7 @@ class SetFlashCardViewController: UIViewController {
     @IBOutlet weak var myTextView: MyTextView!
     @IBOutlet weak var warning: UILabel!
     @IBOutlet weak var button: UIButton!
+    @IBOutlet var tapGesture: UITapGestureRecognizer!
     
     var delegate: Delegate!
     var category: Category!
@@ -32,6 +33,7 @@ class SetFlashCardViewController: UIViewController {
         setMyTextView()
         backButton.isHidden = true
         warning.isHidden = true
+        tapGesture.delegate = self
     }
     
     @IBAction func onButtonPressed(_ sender: UIButton) {
@@ -109,5 +111,12 @@ extension SetFlashCardViewController: UITextViewDelegate {
         if !textView.text.isEmpty {
              warning.isHidden = true
         }
+    }
+}
+
+extension SetFlashCardViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return !contentView.bounds.contains(touch.location(in: contentView))
     }
 }
