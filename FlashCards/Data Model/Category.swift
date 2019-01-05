@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class Category: Object {
+    @objc dynamic var date = Date()
     @objc dynamic var title: String = ""
     var flashCards = List<FlashCard>()
 }

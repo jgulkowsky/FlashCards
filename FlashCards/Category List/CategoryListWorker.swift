@@ -14,7 +14,7 @@ class CategoryListWorker {
     let realm = try! Realm()
     
     func getCategoryList() -> Results<Category> {
-        return realm.objects(Category.self)
+        return realm.objects(Category.self).sorted(byKeyPath: "date", ascending: true)
     }
     
     func deleteCategory(_ category: Category) {

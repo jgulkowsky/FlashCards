@@ -37,7 +37,7 @@ class CategoryListViewController: UITableViewController, Delegate {
         
         let delete = UITableViewRowAction(style: .normal, title: Names.categoryListCellDeleteTitle) { action, index in
             CategoryListWorker().deleteCategory(self.categoryList![index.row])
-            tableView.reloadData()
+            tableView.deleteRows(at: [index], with: UITableView.RowAnimation.left)
         }
         delete.backgroundColor = ColorHelper.uicolorFromHex(GeneralConstants.HexColors.red)
         
