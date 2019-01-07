@@ -12,8 +12,11 @@ import PureLayout
 class FlashCardView: UIView {
     
     private var label: UILabel!
+    private var editButton: UIButton!
+    private var deleteButton: UIButton!
     
-    private var tapGesture: UITapGestureRecognizer!
+    private var singleTapGesture: UITapGestureRecognizer!
+    private var doubleTapGesture: UITapGestureRecognizer!
     private var longPressGesture: UILongPressGestureRecognizer!
     private var panGesture: UIPanGestureRecognizer!
     
@@ -22,6 +25,15 @@ class FlashCardView: UIView {
     private var delegate: FlashCardViewDelegate!
     
     private var isQuestionVisible = true
+    private var isEditModeOn: Bool {
+        get {
+            return !editButton.isHidden && !deleteButton.isHidden
+        }
+        set {
+            editButton.isHidden = !newValue
+            deleteButton.isHidden = !newValue
+        }
+    }
     
     private var cardLastVelocitiesArray = [CGPoint]()
     private var cardLastVelocitiesArrayIndex = 0
@@ -34,6 +46,7 @@ class FlashCardView: UIView {
         initializeView()
         initializeLabel()
         initializeGestures()
+        initializeButtons()
         self.isHidden = true
     }
     
@@ -64,16 +77,50 @@ class FlashCardView: UIView {
     
     private func initializeGestures() {
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(onPan))
-        tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
+        singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(onSingleTap))
+        doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(onDoubleTap))
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress))
-        tapGesture.numberOfTapsRequired = 2
+        doubleTapGesture.numberOfTapsRequired = 2
         longPressGesture.require(toFail: panGesture)
+        singleTapGesture.require(toFail: doubleTapGesture)
         self.addGestureRecognizer(panGesture)
-        self.addGestureRecognizer(tapGesture)
+        self.addGestureRecognizer(singleTapGesture)
+        self.addGestureRecognizer(doubleTapGesture)
         self.addGestureRecognizer(longPressGesture)
     }
     
+    private func initializeButtons() {
+        let size: CGFloat = 30
+        let offset: CGFloat = 10
+        
+        editButton = UIButton(frame: CGRect.zero)
+        self.addSubview(editButton)
+        editButton.autoPinEdge(toSuperviewEdge: .top, withInset: offset)
+        editButton.autoPinEdge(toSuperviewEdge: .right, withInset: 2 * offset + size)
+        editButton.autoSetDimensions(to: CGSize(width: size, height: size))
+        editButton.layer.cornerRadius = size / 2
+        editButton.backgroundColor = ColorHelper.uicolorFromHex(GeneralConstants.HexColors.blue)
+        editButton.addTarget(self, action: #selector(onEditButtonPressed(_:)), for: .touchUpInside)
+        //TODO: add image
+        
+        deleteButton = UIButton(frame: CGRect.zero)
+        self.addSubview(deleteButton)
+        deleteButton.autoPinEdge(toSuperviewEdge: .top, withInset: offset)
+        deleteButton.autoPinEdge(toSuperviewEdge: .right, withInset: offset)
+        deleteButton.autoSetDimensions(to: CGSize(width: size, height: size))
+        deleteButton.layer.cornerRadius = size / 2
+        deleteButton.backgroundColor = ColorHelper.uicolorFromHex(GeneralConstants.HexColors.red)
+        deleteButton.addTarget(self, action: #selector(onDeleteButtonPressed(_:)), for: .touchUpInside)
+        //TODO: add image
+        
+        isEditModeOn = false
+    }
+    
     @objc private func onPan(_ recognizer: UIPanGestureRecognizer) {
+        if isEditModeOn {
+            return
+        }
+        
         moveCard()
         rotateCard()
         updateVelocitiesArray()
@@ -87,14 +134,30 @@ class FlashCardView: UIView {
         }
     }
     
-    @objc private func onTap(_ recognizer: UITapGestureRecognizer) {
-        flip()
+    @objc private func onSingleTap(_ recognizer: UITapGestureRecognizer) {
+        quitEditMode()
+    }
+    
+    @objc private func onDoubleTap(_ recognizer: UITapGestureRecognizer) {
+        if !isEditModeOn {
+            flip()
+        }
     }
     
     @objc private func onLongPress(_ recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == .ended {
-            delegate.onFlashCardViewLongPress(self, flashCard)
+            startEditMode()
         }
+    }
+    
+    @objc private func onEditButtonPressed(_ sender: UIButton) {
+        delegate.onFlashCardEdited(flashCard)
+        quitEditMode()
+    }
+    
+    @objc private func onDeleteButtonPressed(_ sender: UIButton) {
+        delegate.onFlashCardDeleted(flashCard)
+        quitEditMode()
     }
     
     private func updateLabel() {
@@ -103,6 +166,20 @@ class FlashCardView: UIView {
     
     private func getExtraTopOffset() -> CGFloat {
         return UIApplication.shared.statusBarFrame.height + (parentViewController.navigationController?.navigationBar.frame.height ?? 0)
+    }
+    
+    private func startEditMode() {
+        if !isEditModeOn {
+            isEditModeOn = true
+            //TODO: start trembling animation of the card
+        }
+    }
+    
+    private func quitEditMode() {
+        if isEditModeOn {
+            isEditModeOn = false
+            //TODO: stop trembling animation of the card
+        }
     }
 }
 

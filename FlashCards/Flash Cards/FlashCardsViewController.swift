@@ -10,8 +10,9 @@ import UIKit
 
 protocol FlashCardViewDelegate {
     
-    func onFlashCardViewLongPress(_ flashCardView: FlashCardView, _ flashCard: FlashCard)
     func onFlashCardViewRemoved()
+    func onFlashCardDeleted(_ flashCard: FlashCard)
+    func onFlashCardEdited(_ flashCard: FlashCard)
 }
 
 class FlashCardsViewController: UIViewController {
@@ -92,30 +93,18 @@ extension FlashCardsViewController {
 
 extension FlashCardsViewController: FlashCardViewDelegate {
     
-    func onFlashCardViewLongPress(_ flashCardView: FlashCardView, _ flashCard: FlashCard) {
-        showAlert(flashCardView, flashCard)
-    }
-    
     func onFlashCardViewRemoved() {
         removeCardFromDeck()
     }
     
-    private func showAlert(_ flashCardView: FlashCardView, _ flashCard: FlashCard) {
-        let alert = UIAlertController(title: Names.flashCardsAlertTitle, message: nil, preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: Names.flashCardsAlertEditTitle, style: .default) { action in
-            self.flashCardToSend = flashCard
-            FlashCardsRouter.routeToSetFlashCard(from: self)
-        })
-        
-        alert.addAction(UIAlertAction(title: Names.flashCardsAlertDeleteTitle, style: .destructive) { action in
-            FlashCardsWorker().deleteFlashCard(flashCard)
-            self.removeCardFromDeck()
-        })
-        
-        alert.addAction(UIAlertAction(title: Names.flashCardsAlertCancelTitle, style: .cancel, handler: nil))
-        
-        self.present(alert, animated: true)
+    func onFlashCardDeleted(_ flashCard: FlashCard) {
+        FlashCardsWorker().deleteFlashCard(flashCard)
+        self.removeCardFromDeck()
+    }
+    
+    func onFlashCardEdited(_ flashCard: FlashCard) {
+        self.flashCardToSend = flashCard
+        FlashCardsRouter.routeToSetFlashCard(from: self)
     }
     
     private func removeCardFromDeck() {
