@@ -93,7 +93,8 @@ class FlashCardView: UIView {
         let size: CGFloat = 30
         let offset: CGFloat = 10
         
-        editButton = UIButton(frame: CGRect.zero)
+        editButton = UIButton(type: .custom)
+        editButton.frame = CGRect.zero
         self.addSubview(editButton)
         editButton.autoPinEdge(toSuperviewEdge: .top, withInset: offset)
         editButton.autoPinEdge(toSuperviewEdge: .right, withInset: 2 * offset + size)
@@ -101,7 +102,12 @@ class FlashCardView: UIView {
         editButton.layer.cornerRadius = size / 2
         editButton.backgroundColor = ColorHelper.uicolorFromHex(GeneralConstants.HexColors.blue)
         editButton.addTarget(self, action: #selector(onEditButtonPressed(_:)), for: .touchUpInside)
-        //TODO: add image
+        if let editIcon = UIImage(named: "EditIcon") {
+            let tintableIcon = editIcon.withRenderingMode(.alwaysTemplate)
+            editButton.setImage(tintableIcon, for: .normal)
+            editButton.tintColor = .white
+            editButton.imageEdgeInsets = UIEdgeInsets(top: 7, left: 9, bottom: 9, right: 7)
+        }
         
         deleteButton = UIButton(frame: CGRect.zero)
         self.addSubview(deleteButton)
@@ -111,7 +117,12 @@ class FlashCardView: UIView {
         deleteButton.layer.cornerRadius = size / 2
         deleteButton.backgroundColor = ColorHelper.uicolorFromHex(GeneralConstants.HexColors.red)
         deleteButton.addTarget(self, action: #selector(onDeleteButtonPressed(_:)), for: .touchUpInside)
-        //TODO: add image
+        if let deleteIcon = UIImage(named: "DeleteIcon") {
+            let tintableIcon = deleteIcon.withRenderingMode(.alwaysTemplate)
+            deleteButton.setImage(tintableIcon, for: .normal)
+            deleteButton.tintColor = .white
+            deleteButton.imageEdgeInsets = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
+        }
         
         isEditModeOn = false
     }
