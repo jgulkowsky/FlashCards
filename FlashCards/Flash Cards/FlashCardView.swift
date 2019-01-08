@@ -39,6 +39,11 @@ class FlashCardView: UIView {
     private var cardLastVelocitiesArrayIndex = 0
     private var averageCardVelocity = CGPoint(x: 0, y: 0)
     
+    private enum ButtonType {
+        case edit
+        case delete
+    }
+    
     func initialize(with flashCard: FlashCard, _ parentViewController: UIViewController, _ delegate: FlashCardViewDelegate) {
         self.flashCard = flashCard
         self.parentViewController = parentViewController
@@ -90,43 +95,39 @@ class FlashCardView: UIView {
     }
     
     private func initializeButtons() {
+        initializeButton(&editButton, buttonType: .edit)
+        initializeButton(&deleteButton, buttonType: .delete)
+        isEditModeOn = false
+    }
+    
+    private func initializeButton(_ button: inout UIButton?, buttonType: ButtonType) {
         let size: CGFloat = 30
         let offset: CGFloat = 10
+        let isEditButton = buttonType == .edit
         
-        editButton = UIButton(type: .custom)
-        editButton.frame = CGRect.zero
-        self.addSubview(editButton)
-        editButton.autoPinEdge(toSuperviewEdge: .top, withInset: offset)
-        editButton.autoPinEdge(toSuperviewEdge: .right, withInset: 2 * offset + size)
-        editButton.autoSetDimensions(to: CGSize(width: size, height: size))
-        editButton.layer.cornerRadius = size / 2
-        editButton.backgroundColor = ColorHelper.uicolorFromHex(GeneralConstants.HexColors.blue)
-        editButton.addTarget(self, action: #selector(onEditButtonPressed(_:)), for: .touchUpInside)
-        if let editIcon = UIImage(named: "EditIcon") {
+        let rightInset = isEditButton ? 2 * offset + size : offset
+        let color = isEditButton ? GeneralConstants.HexColors.blue : GeneralConstants.HexColors.red
+        let selector = isEditButton ? #selector(onEditButtonPressed(_:)) : #selector(onDeleteButtonPressed(_:))
+        let iconName = isEditButton ? "EditIcon" : "DeleteIcon"
+        let iconInsets = isEditButton ? UIEdgeInsets(top: 7, left: 9, bottom: 9, right: 7) : UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
+        
+        button = UIButton(type: .custom)
+        button!.frame = CGRect.zero
+        self.addSubview(button!)
+        button!.autoPinEdge(toSuperviewEdge: .top, withInset: offset)
+        button!.autoPinEdge(toSuperviewEdge: .right, withInset: rightInset)
+        button!.autoSetDimensions(to: CGSize(width: size, height: size))
+        button!.layer.cornerRadius = size / 2
+        button!.backgroundColor = ColorHelper.uicolorFromHex(color)
+        button!.addTarget(self, action: selector, for: .touchUpInside)
+        
+        if let editIcon = UIImage(named: iconName) {
             let tintableIcon = editIcon.withRenderingMode(.alwaysTemplate)
-            editButton.setImage(tintableIcon, for: .normal)
-            editButton.tintColor = .white
-            editButton.adjustsImageWhenHighlighted = false
-            editButton.imageEdgeInsets = UIEdgeInsets(top: 7, left: 9, bottom: 9, right: 7)
+            button!.setImage(tintableIcon, for: .normal)
+            button!.tintColor = .white
+            button!.adjustsImageWhenHighlighted = false
+            button!.imageEdgeInsets = iconInsets
         }
-        
-        deleteButton = UIButton(frame: CGRect.zero)
-        self.addSubview(deleteButton)
-        deleteButton.autoPinEdge(toSuperviewEdge: .top, withInset: offset)
-        deleteButton.autoPinEdge(toSuperviewEdge: .right, withInset: offset)
-        deleteButton.autoSetDimensions(to: CGSize(width: size, height: size))
-        deleteButton.layer.cornerRadius = size / 2
-        deleteButton.backgroundColor = ColorHelper.uicolorFromHex(GeneralConstants.HexColors.red)
-        deleteButton.addTarget(self, action: #selector(onDeleteButtonPressed(_:)), for: .touchUpInside)
-        if let deleteIcon = UIImage(named: "DeleteIcon") {
-            let tintableIcon = deleteIcon.withRenderingMode(.alwaysTemplate)
-            deleteButton.setImage(tintableIcon, for: .normal)
-            deleteButton.tintColor = .white
-            deleteButton.adjustsImageWhenHighlighted = false
-            deleteButton.imageEdgeInsets = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
-        }
-        
-        isEditModeOn = false
     }
     
     @objc private func onPan(_ recognizer: UIPanGestureRecognizer) {
