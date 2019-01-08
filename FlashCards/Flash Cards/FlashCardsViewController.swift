@@ -58,6 +58,7 @@ extension FlashCardsViewController {
     }
     
     @objc private func onAddCard() {
+        quitCardEditModeIfPossible()
         FlashCardsRouter.routeToSetFlashCard(from: self)
     }
     
@@ -80,6 +81,12 @@ extension FlashCardsViewController {
     private func showNextCardIfPossible() {
         if !self.cardViews.isEmpty {
             cardViews[0].show()
+        }
+    }
+    
+    private func quitCardEditModeIfPossible() {
+        if !self.cardViews.isEmpty {
+            cardViews[0].quitEditMode()
         }
     }
     
@@ -128,7 +135,7 @@ extension FlashCardsViewController: Delegate {
             }
             
             if !cardViews.isEmpty {
-                if let flashCardToSend = flashCardToSend {
+                if flashCardToSend != nil {
                     cardViews[0].removeFromSuperview()
                     cardViews.remove(at: 0)
                 } else {

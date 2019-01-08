@@ -106,6 +106,7 @@ class FlashCardView: UIView {
             let tintableIcon = editIcon.withRenderingMode(.alwaysTemplate)
             editButton.setImage(tintableIcon, for: .normal)
             editButton.tintColor = .white
+            editButton.adjustsImageWhenHighlighted = false
             editButton.imageEdgeInsets = UIEdgeInsets(top: 7, left: 9, bottom: 9, right: 7)
         }
         
@@ -121,6 +122,7 @@ class FlashCardView: UIView {
             let tintableIcon = deleteIcon.withRenderingMode(.alwaysTemplate)
             deleteButton.setImage(tintableIcon, for: .normal)
             deleteButton.tintColor = .white
+            deleteButton.adjustsImageWhenHighlighted = false
             deleteButton.imageEdgeInsets = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
         }
         
@@ -182,15 +184,32 @@ class FlashCardView: UIView {
     private func startEditMode() {
         if !isEditModeOn {
             isEditModeOn = true
-            //TODO: start trembling animation of the card
+            startWobbling()
         }
     }
     
-    private func quitEditMode() {
+    func quitEditMode() {
         if isEditModeOn {
             isEditModeOn = false
-            //TODO: stop trembling animation of the card
-        }
+            stopWobbling()
+    }
+}
+    
+    private func startWobbling() {
+        let degToRad: CGFloat = .pi / 180
+        let degrees: CGFloat = 1
+        let leftWobble = CGAffineTransform.identity.rotated(by: -degrees * degToRad)
+        let rightWobble = CGAffineTransform.identity.rotated(by: degrees * degToRad)
+       
+        self.transform = leftWobble
+        UIView.animate(withDuration: 0.1, delay: 0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: {
+            self.transform = rightWobble
+        }, completion: nil)
+    }
+    
+    private func stopWobbling() {
+        self.layer.removeAllAnimations()
+        self.transform = CGAffineTransform.identity.rotated(by: 0)
     }
 }
 
